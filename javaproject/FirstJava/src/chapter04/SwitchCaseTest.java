@@ -16,7 +16,7 @@ public class SwitchCaseTest {
 			// 변수
 			// 연산
 			// 메소드호출
-			// 객체 생
+			// 객체 생성
 			// break; // breack 가 생략 되면 멈추지 않고 위에서 부터 계속 처리된다.
 
 		case 2:

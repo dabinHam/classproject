@@ -27,8 +27,7 @@ public class ExceptionTryCatchTest {
 
 		} catch (ArithmeticException e) { // <= 예외가 발생 시 처리할 구문 , 예외가 발생하지 않으면 여기부터 무시하고 다음구문으로 넘어간다.
 			System.out.println("0으로 나누는것은 불가합니다."); //
-			e.printStackTrace(); // <= 메소드의 호출이력을 볼 수 있다. / 오류내 : "java.lang.ArithmeticException: / by zero at
-									// chapter10.ExceptionTryCatchTest.main(ExceptionTryCatchTest.java:21)"
+			e.printStackTrace(); // <= 메소드의 호출이력을 볼 수 있다. / 오류내용 : "java.lang.ArithmeticException: / by zero at chapter10.ExceptionTryCatchTest.main(ExceptionTryCatchTest.java:21)"
 			System.out.println(e.getMessage()); // <- 예외가 발생한 메시지를 볼 수있다. / 위에서 출력된 오류를 메시지로 출력"/ by zero"
 		} catch (NullPointerException e) {
 			System.out.println("null!!!!!!!!!!");
