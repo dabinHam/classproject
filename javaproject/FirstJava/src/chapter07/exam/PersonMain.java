@@ -1,6 +1,6 @@
 package chapter07.exam;
 
-public class PersontMain {
+public class PersonMain {
 
 	public static void main(String[] args) {
 
