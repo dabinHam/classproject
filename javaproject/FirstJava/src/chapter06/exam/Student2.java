@@ -1,13 +1,13 @@
 package chapter06.exam;
 
-public class Student {
+public class Student2 {
 
 	private String name;
 	private int korScore;
 	private int engScore;
 	private int matScore;
 
-	public Student(String name, int korScore, int engScore, int matScore) {
+	public Student2(String name, int korScore, int engScore, int matScore) {
 		this.name = name;
 		this.korScore = korScore;
 		this.engScore = engScore;
@@ -73,7 +73,7 @@ public class Student {
 
 	public static void main(String[] args) {
 
-		Student s = new Student("학생1", 100, 90, 80);
+		Student2 s = new Student2("학생1", 100, 90, 80);
 
 		System.out.println("합: : " + s.sum());
 		System.out.println("평균 : " + s.avg());
