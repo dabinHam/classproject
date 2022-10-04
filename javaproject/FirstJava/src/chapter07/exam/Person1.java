@@ -2,7 +2,7 @@ package chapter07.exam;
 
 import java.time.LocalDate;
 
-public class Person {
+public class Person1 {
 
 	// Q1. Person 이라는 클래스를 정의해봅시다.
 	// 1 이름을 저장하는 변수, 
@@ -14,7 +14,7 @@ public class Person {
 	String personNumber;
 	
 	
-	public Person(String name, String personNumber) {
+	public Person1(String name, String personNumber) {
 		super();
 		this.name = name;
 		this.personNumber = personNumber;
@@ -76,7 +76,7 @@ public class Person {
 		int curYear = LocalDate.now().getYear(); // 올해년도 출력
 		
 		//
-		Person p = new Person("ham","000925-4098765");
+		Person1 p = new Person1("ham","000925-4098765");
 		p.printInfo();
 		
 	}
