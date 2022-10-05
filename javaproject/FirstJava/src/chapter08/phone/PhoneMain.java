@@ -23,9 +23,21 @@ public class PhoneMain {
 		
 		smartPhone2.appStop("카카오톡");
 		
-		//...............
+		//.....
 		
 		smartPhone2.turnOff();
+		
+		SmartPhone3 phone3 = new SmartPhone3("CCC@gamil.com");
+		phone3.turnOn();
+		phone3.call();
+		phone3.appRun("네이버");
+		phone3.appStop("네이버");
+		
+		//.....
+		
+		phone3.turnOff();
+		
+		
 		
 		
 	}
