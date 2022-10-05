@@ -16,10 +16,14 @@ public class MyInterfaceImpl<T1, T2> implements MyInterface<T1, T2> {
 	public static void main(String[] args) {
 
 		// <> 안에 기본형<T1,T2> 가 아닌 참조형<String,Integer>이 와야한다.
+		// 내가 저장하고싶은 지정하고싶은 타입만을 사용 = 안전하게 사용하는것 이게 바로 제네릭의 가치!
 		MyInterfaceImpl<String, Integer> myClass = new MyInterfaceImpl<String, Integer>();
 
 		System.out.println("Ten");
-		System.out.println((10));
+		
+//		System.out.println((new Integer(10)));
+//		System.out.println((new Integer("10")));
+		System.out.println((10)); // 기본형을 자동으로(위와같이)참조형으로 변경해준다 : 오토박싱
 
 	}
 
