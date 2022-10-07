@@ -1,0 +1,2 @@
+module OOPMiniProjects_DB {
+}
