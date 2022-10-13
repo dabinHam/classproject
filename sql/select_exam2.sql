@@ -9,7 +9,7 @@ where bookid=1;
 -- (2) 가격이20,000원이상인도서의이름
 select bookname,price
 from Book
-where price=7000;
+where price>=20000;
 
 -- 2 마당서점의운영자와경영자가요구하는다음질문에대해SQL 문을작성하시오.
 -- (3) 모든고객의이름, 주소
