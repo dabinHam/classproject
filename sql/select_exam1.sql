@@ -52,12 +52,14 @@ where hiredate like '%1981%';
 -- 10. 관리자가 없는 사원의 이름과 담당 업무를 출력하시오.
 select ename,job
 from emp
-where mgr is not null;
+-- where mgr is not null; -- null인경우를 찾아야 하는데 null이 아닌 경우의 답을 입력함.(오답)
+where mgr is null;
 
 -- 11. 커미션을 받을 수 있는 자격이 되는 사원의 이름, 급여, 커미션을 출력하되 급여 및 커미션을 기준으로 내림차순 정렬하여 표시하시오.
 select ename,sal,comm
 from emp
-where comm is not null
+-- where comm is not null -- 틀린답은 아니지만 comm !=0 을 넣어주면 좀 더 정확하게 할 수 있다. 
+where comm is not null and comm !=0 
 order by comm desc;
 
 -- 12. 이름의 세번째 문자가 R인 사원의 이름을 표시하시오.
@@ -68,12 +70,14 @@ where ename like '__R%';
 -- 13. 이름에 A와 E를 모두 포함하고 있는 사원의 이름을 표시하시오.
 select ename
 from emp
-where ename like '%A%E%';
+-- where ename like '%A%E%'; -- A가 무조건 먼저 나와야 하는 패턴(오답)
+where ename like '%A%' and ename like '%E%';
 
 -- 14. 담당업무가 CLERK, 또는 SALESMAN이면서 급여가 $1600, $950 또는 $1300이 아닌 사원의 이름, 담당업무, 급여를 출력하시오.
 select ename,job,sal
 from emp
-where job='CLERK' or job='SALESMAN' and not sal in(1600,950,1300);
+-- where job='CLERK' or job='SALESMAN' and not sal in(1600,950,1300); // 앞 조건에 ()을 해줘야 해당사항에 맞는 답이 나오고 안해주면 모든 CLERK가 나와서 (오답), not의 위치의 경우 not sal in ,sal not in 둘다 맞는표현
+where (job='CLERK' or job='SALESMAN') and not sal in(1600,950,1300);
 
 -- 15. 커미션이 $500 이상인 사원의 이름과 급여 및 커미션을 출력하시오.
 select ename,sal,comm
