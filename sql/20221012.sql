@@ -44,7 +44,7 @@ from emp;
 select ename, sal , sal*12 , sal*12+comm
 from emp;
 
--- null의 값을 치완해주는함수 : nuvl(원본데이터, null 일때 치환되는 값)
+-- null의 값을 치완해주는함수 : nvl(원본데이터, null 일때 치환되는 값)
 select ename, sal , sal*12 , sal*12+nvl * (comm,0) as yearSal2
 from emp;
 
