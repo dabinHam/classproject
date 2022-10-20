@@ -97,7 +97,7 @@ create table emp03 as select * from emp; -- 테이블 생성
 
 select * from emp03;
 select * from emp03 where ename='SCOTT';
-set sql_safe_updates=0; -- 임시로 safemode -> disable로 변경 명령문. (원하는쿼리실행 전 실행)
+set sql_safe_updates=0; -- 임시로 safemode -> disable로 권한변경 명령문. (원하는쿼리실행 전 실행)
 -- 모든 사원의 부서번호를 30으로 변경 | where절이 없다면 모든 행을 대상으로 , 바꾸려는 대상을 set 뒤쪽으로 
 update emp03 set deptno=30;
 
