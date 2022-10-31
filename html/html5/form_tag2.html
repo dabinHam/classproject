@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 서버에 데이터를 전송하기 위하여 form은 꼭 필요하다. -->
+    <!-- method : Get / Post -->
+    <!-- form 으로 데이터를 보내는건 Post 를 사용 보안성도 그렇고 모든데이터를 보낼수 없기 때문에 ! , 대부분의 다른 데이터는 Get을 사용한다 .-->
+    <form action="#" method="post">
+
+      <!-- username = 사용자가 입력한 문자열  -->
+      <!-- readonly : input 읽기전용상태 -->
+      <!-- disabled : input 사용불가상태, 폼데이터 제출시에도 제출되지않음. -->
+      <input
+        type="text"
+        name="username"
+        id="username"
+        value="cool"
+        readonly
+        disabled
+        class="input"
+      />
+      <br>
+      <fieldset>
+        <legend>로그인 폼</legend><!-- legend : fieldset의 이름 -->
+        <table>
+          <tr>
+            <td>
+              <label for="username">아이디</label><!-- for -> id  label 의 for 과 input의 id 는 같은이름으로 적어주면 라벨만 클릭해도 input의 커서가 깜빡인다 -->
+            </td>
+            <td><input type="text" name="username" id="username"></td>
+          </tr>
+          <tr>
+            <td>
+              <label for="pw">비밀번호</label>
+            </td>
+            <td><input type="password" name="pw" id="pw"></td>
+          </tr>
+          <tr>
+            <td>
+              <label for="check">개인정보 확인</label>
+            </td>
+            <td><input type="checkbox" name="check" id="check"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><input type="submit" 전송></td>
+          </tr>
+        </table>
+      </fieldset>
+      
+      <br>
+      <input type="password" name="pw" id="pw" class="input" required><!-- required : 필수입력사항, 공백입력에 대한 체크를 할 수 있다. -->
+      <br>
+      <label> <input type="checkbox"> 개인정보 활용 동의 </label>
+      
+      <br>
+      <label> <input type="checkbox" name="lang" value="java" checked> java </label>
+      <label> <input type="checkbox" name="lang" value="Mysql"> Mysql </label>
+      <label> <input type="checkbox" name="lang" value="Html5"> Html5 </label>
+      <hr>
+      <label> <input type="radio" name="like" value="music"> 음악 </label>
+      <label> <input type="radio" name="like" value="book"> 독서 </label>
+      <label> <input type="radio" name="like" value="movie" checked> 영화 </label>
+      <hr>
+      <input type="date" name="date">
+      <input type="time" name="time" id="">
+      <input type="datetime-lical">
+      <input type="month">
+      <input type="week">
+      <hr>
+      <input type="file"><!-- 파일업로드 -->
+      <hr>
+      <label> 나이 <input type="number"> </label>
+      <hr>
+      <label> 이메일 <input type="email" name="email" id="email"> </label>
+      <hr>
+      <label> 전화번호 <input type="tel"> </label>
+      <hr>
+      <label> 주소 <input type="url"> </label>
+      <hr>
+      <input type="image" src="img1.png" width="100">
+      <hr>
+      <input type="range" name="age" min="1" max="200">
+      <hr>
+      <select name="year" id="">
+        <option value="2022">2022</option>
+        <option value="2021">2021</option>
+      </select>
+      <hr>
+      <textarea name="" id="" cols="20" rows="10">내용을 입력하세요</textarea>
+      <hr>
+      <input type="hidden" name="userid" value="cool"><!-- 화면에 보여지지 않는 값  -->
+      <hr>
+      <input type="submit" value="가입">
+      <input type="reset" value="다시쓰기">
+      <input type="button" value="버튼">
+      <button>전송하기버튼</button>
+    </form>
+  </body>
+</html>
