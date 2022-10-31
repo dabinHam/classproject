@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS1</title>
+    <style>
+        /* 
+        선택자{ 속성이름 : 속성값; 속성이름:값; ...}
+        */
+        *{
+            color: blue;
+        }
+        
+        /* 태그 선택자 */
+            h1{ background-color: thistle; color: darkslateblue;}
+            p{ color: tomato; font-weight: bold; background-color: khaki;}
+
+            body,h1,p{
+                font-size: 16px;
+                margin: 0;
+                padding: 0;
+                font-style: italic;
+            }
+
+            div{
+                border: 1px solid #333;
+                margin: 10px;
+            }
+            #header{
+                background-color: cornflowerblue;
+                color: #333;
+            }
+            #aside{
+                background-color: yellowgreen;
+                color: violet;
+                width: 100px;
+                height: 100px;
+            }
+            #content{
+                color: turquoise;
+            }
+    </style>
+</head>
+<body>
+
+    <div id="header">header</div>
+    <div id="aside">aside</div>
+    <div id="content">content</div>
+    <div id="footer">footer</div>
+
+    <hr>
+
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing.</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, repellat. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit, delectus. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic itaque perspiciatis aperiam iusto, vitae facilis deserunt quaerat facere pariatur. Repellendus magnam deleniti exercitationem quam commodi cum sunt dicta facilis nam!</p>
+</body>
+</html>
