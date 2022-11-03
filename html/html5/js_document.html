@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서객체</title>
+    <script>
+        // load가 되지않은 상태에서 이렇게만 쓰면 실행이 되지 않는다.
+        // let h1 = document.querySelector('h1');
+        // console.log(h1);
+
+        // 방법1. 아래와 같이 window.onload = function(){}안에 쓴다 
+        // 방법2. 실행할 html문 아래에 위치 시킨다.
+        window.onload = function(){
+            let h1 = document.querySelector('h1');
+            console.log(h1);
+        }
+
+        /* 이벤트 설정 */
+        // document.addEventListener('이벤트 이름', 핸들러함수);
+        document.addEventListener('DOMContentLoaded',()=>{
+
+            // 문서객체 생성 querySelector()
+            let h1 = document.querySelector('h1');
+            console.log(h1,typeof h1);
+            console.log(h1.textContent);    // getter와 같은의미
+            console.log(h1.innerHTML);
+            console.log(h1.innerText);
+            h1.textContent = 'HEADER';      // setter와 같은 의미 , 작성해둔 html을 변경시킨다.
+            
+            // 문서 스타일 변경
+            h1.style.backgroundColor = 'pink';
+            h1.style.color = 'green';
+            h1.style.textAlign = 'center';
+            h1.style.padding = '10px';
+            h1.style.margin = '20px';
+            h1.style.fontSize = '30px';
+
+            /* document.querySelectorAll(); */
+            let headers = document.querySelectorAll('h1');
+            let t1 = document.querySelectorAll('.t1');
+            console.log(headers);
+
+            headers.forEach((item)=>{
+                item.textContent = 'header';
+                item.style.backgroundColor = 'lime';
+                item.style.color = 'pink';
+                item.style.fontSize = '30px';
+            });
+            t1.forEach((t1)=>{
+                t1.textContent = 'Test';
+            });
+
+            /* document.getElementById(); */
+            let header = document.getElementById('header');
+            header.textContent = 'last Header';
+        
+            let div = document.querySelector('#msg');
+            // div.textContent = 'hello';
+            // div.innerHTML = '<h1>hello!!</h1>';
+            div.textContent = 'hello!!!!';
+        
+            /* 속성 컨트롤 */
+            let link = document.querySelector('a');
+            let href = link.getAttribute('href');
+            console.log('href',href);
+            link.setAttribute('href','https://www.google.com');
+            link.setAttribute('link-index',1);      // 속성추가
+
+            let index = link.getAttribute('link-index');
+            console.log('index',index);
+            
+
+            /* 동적 요소 생성 -> 추가 */ 
+            let newElement = document.createElement('h2');
+            newElement.textContent = '동적으로 생성한 h2 태그';
+            newElement.style.backgroundColor = 'skyblue';
+            newElement.style.color = 'puple';
+            newElement.style.textAlign = 'center';
+            newElement.setAttribute = ('height', 100);
+        
+            // target : 부모 태그 캐스팅
+            let wrap = document.querySelector('#wrap');
+
+            wrap.appendChild(newElement);
+
+            let newImg = document.createElement('img');
+            newImg.setAttribute('src','../img/img1.png');
+            newImg.setAttribute('width', 200); // 속성으로 제어 
+
+            wrap.appendChild(newImg);
+
+            /* 문서객체 조작 */
+            let body = document.body;
+            let removeTarget = document.querySelector('h3');    // 지우고싶은 객체 제거
+            body.removeChild(removeTarget);
+        });
+
+
+    </script>
+</head>
+<body>
+
+    <h3>
+        문서객체 조작
+    </h3>
+
+    <div id="wrap"></div>
+
+    <hr>
+    <h2><a href="https://www.naver.com">네이버?????</a></h2>
+
+    <div id="msg">
+
+    </div>
+
+    <h1>안녕하세요</h1>
+    <h1>안녕하세요</h1>
+    <h1>안녕하세요</h1>
+    <h1 id="header">안녕하세요</h1>
+    <h1 class="t1">안녕하세요</h1>
+</body>
+</html>
