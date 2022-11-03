@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prompt 함수</title>
+</head>
+<body>
+    <script>
+        // console.log('JS')
+
+        /* alert함수 : 경고창 */
+        // alert('Hi~!~!');
+
+        /* confirm함수 : 취소|확인(boolean) 의 대답을 요구하는경우 사용  */
+        // confirm('삭제하시겠습니까?')
+        // console.log(confirm('삭제하시겠습니까?'));
+
+
+        console.log(typeof Boolean(10), Boolean(10))
+        console.log(typeof Boolean('aa'), Boolean('aa'))
+        console.log(typeof Boolean([]), Boolean([]))
+        console.log(typeof Boolean({}), Boolean({}))
+        console.log(typeof Boolean(null), Boolean(null))
+
+        // let bool2 = !'aaa';         // 변수 bool2 가 ''가 아니다. => true | false
+        let bool2 = NaN;            //  변수 bool2 가 Number가 아니다.
+        // console.log('bool2', bool2, typeof bool2)
+        console.log('bool2', bool2, typeof bool2 , Boolean (bool2));
+
+
+
+
+        ////////////////////////////////////////
+
+        let str1 = String(100)
+        console.log('str1',str1,typeof str1)
+
+        let bool1 = String(false)
+        console.log('bool1',bool1,typeof bool1)
+
+        let str2 = 100 + '';
+        let str3 = true + '';
+        console.log('str2', typeof str2,'str3',typeof str3)
+
+        /* prompt함수 : 사용자에게 입력값을 받을 수 있음 (= java의 Scanner) */
+        // prompt('나이를 입력하세요');
+
+        // const str = prompt('나이를 입력하세요');
+        const str = prompt('금액을 입력하세요');
+        console.log('str', str, typeof str)
+
+        /* Number(문자열) : 생성자 함수(String을 숫자형태로 변환) */
+        let num = Number(str)
+        console.log('num', num, typeof num)
+
+        /*  NaN -> Not a Number */
+        let num1 = parseInt(str) // 숫자로 치환 정수만 받기 , 문자가 먼저오면 뒤 숫자 인식 불가
+        console.log('num1', num1, typeof num1)
+
+        let num2 = parseFloat(str) // 숫자로 치환 실수(소수점)만 받기 , 문자가 먼저오면 뒤 숫자 인식 불가 
+        console.log('num2', num2, typeof num2)
+
+    </script>
+</body>
+</html>
