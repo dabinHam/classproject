@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        const str = prompt('나이를 입력하세요');
+        console.log('str',str , typeof str); // 입력 : 20 | 결과 : str 20 string
+                                             // 입력 : 0.5$|결과 : str , 0.5$ , string
+                                             // 입력 : $0.5|결과 : str , $0.5 , string
+        // Number(문자열) : 앞에 있는 숫자만 출력
+
+        let num = Number(str)
+        console.log('num' , num, typeof num);// 입력 : 20|결과 : num , num, typeof num
+                                             // 입력 : 2000원|결과 : num , NaN , number
+                                             // 입력 : 0.5$|결과 : num2 , NaN , number
+                                             // 입력 : $0.5|결과 : num2 , NaN , number
+        // NaN -> Not a Nuber
+
+        // 정수값만 출력
+        let num1 = parseInt(str);
+        console.log('num1', num1, typeof num1); // 입력 : 20|결과 : num1 , 20 , number
+                                                // 입력 : 2000|결과 : num1 , 2000 , number
+                                                // 입력 : 0.5$|결과 : num1 , 0 , number
+                                                // 입력 : $0.5|결과 : num1 , NaN , number
+        // 실수값 다 출력
+        let num2 = parseFloat(str);
+        console.log('num2', num2, typeof num2); // 입력 : 20|결과 : num2 , 20 , number
+                                                // 입력 : 2000|결과 : num2 , 2000 , number
+                                                // 입력 : 0.5$|결과 : num2 , NaN , number
+
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
