@@ -13,7 +13,17 @@
 <body>
   <h1>로그인 페이지</h1>
   <%  // 1. 객체를 만들어놓고
-    request.getParameter("aaa");
+//    request.getParameter("aaa");
+    String userid = request.getParameter("userid");
+    String pw = request.getParameter("pw");
+
+    if (userid.equals(pw)){
+      session.setAttribute("loginid",userid);
+      response.sendRedirect("mypage.jsp");
+    }else {
+      response.sendRedirect("login.html");
+    }
+
     LocalDate now = LocalDate.now();
   %>
 <%--  2. 여기서 호출 ,  표현식 --%>
