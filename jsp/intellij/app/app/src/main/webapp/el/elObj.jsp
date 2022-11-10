@@ -20,7 +20,7 @@
 
     session.setAttribute("member" , member);
 
-    session.setAttribute("product" , new Product());
+    session.setAttribute("prosduct" , new Product());
 
 
 

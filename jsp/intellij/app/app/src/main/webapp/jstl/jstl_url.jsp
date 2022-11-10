@@ -13,8 +13,8 @@
 </head>
 <body>
     <%--url태그의 경우 단일태그로 많이 사용한다.--%>
-    <c:url value="index.jsp" var="urlIndex"/>
-    ${urlIndex} <br>
+<%--    <c:url value="index.jsp" var="urlIndex"/>--%>
+<%--    ${urlIndex} <br>--%>
 
     <c:url value="/index.jsp" var="urlIndex2"/>
     ${urlIndex2}
