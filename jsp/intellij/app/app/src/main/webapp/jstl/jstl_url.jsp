@@ -30,10 +30,14 @@
 
     <br>
     <hr>
-    <c:url value="/jstl/jstl_choosewhen.jsp" var="url">     <%-- 결과 값 :app/jstl/jstl_choosewhen.jsp?sel=c&index=1 --%>
+<%--c:param name : 파라미터의 이름 , value속성이 들어가줘야한다! --%>
+    <c:url value="/jstl/jstl_choosewhen.jsp" var="url">
         <c:param name="sel" value="c"/>
         <c:param name="index">1</c:param>
-    </c:url>
+    </c:url>                                              <%--app/jstl/jstl_choosewhen.jsp
+                                                           name="sel" value="c" :  ?sel=c&
+                                                           name="index"         :  index=1 --%>
+
 
     ${url}
     <a href="${url}">${url}</a>

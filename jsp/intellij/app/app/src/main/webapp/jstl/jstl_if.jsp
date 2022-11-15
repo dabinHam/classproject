@@ -18,21 +18,21 @@
 <%--        참일 때 보여집니다.--%>
 <%--    </c:if>--%>
 
-    <c:if test="${10 eq 10}">
+    <c:if test="${10 eq 10}">               <%--"10과 10은 같다" 갸 챰이면 보여진다. --%>
         참일 때 보여집니다!
     </c:if>
 
     <hr>
     <br>
     이름 :
-    <c:if test="${member[1].name eq null}">
+    <c:if test="${member[1].name eq null}">     <%-- memeber.name의 1번지의 값이 null이면  --%>
         입력된 정보가 없습니다.
     </c:if>
 
     <hr>
 
-    <c:if test="${members[0].name == 'COOLO0'}" var="result" scope="request" />
-    memebers[0].name == 'COOL0' => ${result}
+    <c:if test="${members[0].name == 'COOL0'}" var="result" scope="request" />
+    members[0].name == 'COOL0' => ${result}
 
 
 

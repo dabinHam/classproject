@@ -7,10 +7,11 @@
   Time: 2:54 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%--JSP를 하기위해서 셋팅을 하기 위하여 만든 파일 --%>
+<%--JSTL 셋팅을 하기 위하여 만든 파일 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
   List<Member> members = new ArrayList<>();
+  //                        id    ,  pw  , name
   members.add(new Member("cool00", "1110", "COOL0"));
   members.add(new Member("cool01", "1111", null));
   members.add(new Member("cool02", "1112", "COOL0"));

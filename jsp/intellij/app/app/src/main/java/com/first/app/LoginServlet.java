@@ -6,7 +6,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "LoginServlet", value = "/login")
+@WebServlet(name = "LoginServlet", value = "/logins")
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -21,7 +21,7 @@ public class LoginServlet extends HttpServlet {
             response.sendRedirect("login.html");
         }
 
-//        response.setContentType("text/html");
+//        response.setContentType("text/html");     // 응답타입은 text/html 이라는 뜻
 //
 //        PrintWriter out = response.getWriter();
 //

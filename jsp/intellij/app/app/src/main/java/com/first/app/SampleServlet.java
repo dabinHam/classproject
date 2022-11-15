@@ -18,7 +18,7 @@ public class SampleServlet extends HttpServlet {
     }
 
     @Override
-    public void destroy() {
+    public void destroy() { // 끝나
         System.out.println(">>>>>>>>>>>>>> destroy() 실행");
     }
 

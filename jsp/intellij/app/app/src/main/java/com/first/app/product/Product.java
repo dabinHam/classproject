@@ -6,7 +6,7 @@ public class Product {
 
     private  int price = 1000;
 
-    // VO - getter 만 만들어 보는 예제
+    // VO 개념 - getter만 만들기
     public String[] getList() {
         return list;
     }
