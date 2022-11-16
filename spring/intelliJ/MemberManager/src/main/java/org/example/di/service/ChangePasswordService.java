@@ -15,10 +15,6 @@ public class ChangePasswordService {
 //   @Qualifier("member")
 	private MemberDao memberDao;
 
-	public ChangePasswordService(MemberDao memberDao) {
-
-	}
-
 //   public ChangePasswordService(MemberDao memberDao) {
 //      this.memberDao = memberDao;
 //   }
