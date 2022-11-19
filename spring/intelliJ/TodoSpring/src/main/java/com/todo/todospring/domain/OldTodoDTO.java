@@ -1,28 +1,22 @@
-package com.todo.todo.domain;
+package com.todo.todospring.domain;
 
-import java.time.LocalDate;
+public class OldTodoDTO {
 
-public class TodoDTO {
-
-    // 많은 값을 잡도록 int 가 아닌 long으로 선언
     private long tno;
     private String todo;
     private String dueDate;
-    // boolean 은 int 0, 1 로 처리하는 방법도 있음
     private boolean finished;
 
-    // 기본생성자 누락하지 않도록 주의
-    public TodoDTO() {
+    public OldTodoDTO() {
     }
 
-
-    public TodoDTO(long tno, String todo, String dueDate, boolean finished) {
+    // 2022-11-11
+    public OldTodoDTO(long tno, String todo, String dueDate, boolean finished) {
         this.tno = tno;
         this.todo = todo;
         this.dueDate = dueDate;
         this.finished = finished;
     }
-
 
     public long getTno() {
         return tno;
@@ -48,7 +42,6 @@ public class TodoDTO {
         this.dueDate = dueDate;
     }
 
-    // boolean에서는 getter을 is로 만든다.
     public boolean isFinished() {
         return finished;
     }
@@ -66,10 +59,4 @@ public class TodoDTO {
                 ", finished=" + finished +
                 '}';
     }
-
-
-
-
-
-
 }

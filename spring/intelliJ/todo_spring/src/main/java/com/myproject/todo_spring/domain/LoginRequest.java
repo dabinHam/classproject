@@ -1,4 +1,4 @@
-package com.firstcoding.mvc.springmvc.domain;
+package com.myproject.todo_spring.domain;
 
 import lombok.*;
 
@@ -8,9 +8,8 @@ import lombok.*;
 @Setter
 @ToString
 @Builder
-public class LoginRequest {     // <= Beans
+public class LoginRequest {
 
     private String uid;
     private String pw;
-
 }

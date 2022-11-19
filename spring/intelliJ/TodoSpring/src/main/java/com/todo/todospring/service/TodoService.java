@@ -1,17 +1,19 @@
-package com.todo.todo.service;
+package com.todo.todospring.service;
 
-import com.todo.todo.dao.TodoDao;
-import com.todo.todo.dao.TodoDaoImpl;
-import com.todo.todo.domain.TodoDTO;
-import com.todo.todo.util.ConnectionProvider;
+import com.todo.todospring.dao.TodoDao;
+import com.todo.todospring.dao.TodoDaoImpl;
+import com.todo.todospring.domain.TodoDTO;
+import com.todo.todospring.util.ConnectionProvider;
 import lombok.Cleanup;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.stereotype.Repository;
 
 import java.sql.Connection;
 import java.util.Collections;
 import java.util.List;
 
 @Log4j2
+@Repository
 public class TodoService {
 
     private final TodoDao dao;
