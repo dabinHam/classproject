@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface TodoDao {
+// DAO : DB의 data에 접근하기 위한 객체
 
     // 전체 리스트 출력
     List<TodoDTO> selectAll(Connection conn) throws SQLException;

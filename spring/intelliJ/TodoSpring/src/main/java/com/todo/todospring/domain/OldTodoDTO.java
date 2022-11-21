@@ -10,7 +10,7 @@ public class OldTodoDTO {
     public OldTodoDTO() {
     }
 
-    // 2022-11-11
+
     public OldTodoDTO(long tno, String todo, String dueDate, boolean finished) {
         this.tno = tno;
         this.todo = todo;

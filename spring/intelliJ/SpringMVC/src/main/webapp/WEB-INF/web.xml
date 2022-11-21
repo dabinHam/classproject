@@ -38,7 +38,7 @@
         <filter-name>encodig</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
         <init-param>
-            <param-name>incoding</param-name>
+            <param-name>encoding</param-name>
             <param-value>UTF-8</param-value>
         </init-param>
     </filter>
