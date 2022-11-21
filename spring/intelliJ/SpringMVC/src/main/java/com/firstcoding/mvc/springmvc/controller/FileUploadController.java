@@ -26,11 +26,12 @@ public class FileUploadController {
     public String getReportForm(){
         return "/report/reportForm";
     }
-
+    // 3가지의 방법으로 파일을 받아보기
     // 1. @RequestParam
-    // 2. @MultipartHttpServletRequest
+    // 2. MultipartHttpServletRequest
     // 3. 커맨드 객체
 
+    // 1. @RequestParam
     @PostMapping("/submit1")
     public String result1(
             @RequestParam("snum") String snum,
@@ -63,6 +64,7 @@ public class FileUploadController {
     }
 
     /* === submit2 === */
+    // 2. MultipartHttpServletRequest
     @PostMapping("/submit2")
     public String result2(
             MultipartHttpServletRequest request,
@@ -96,6 +98,7 @@ public class FileUploadController {
     }
 
     /* === submit3 === */
+    // 3. 커맨드 객체
     @PostMapping("/submit3")
     public String result3(
             Report report,
