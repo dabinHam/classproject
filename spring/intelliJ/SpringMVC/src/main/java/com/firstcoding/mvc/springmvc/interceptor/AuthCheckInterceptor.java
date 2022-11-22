@@ -20,7 +20,7 @@ public class AuthCheckInterceptor implements HandlerInterceptor {
         HttpSession session = request.getSession(false);    // false :  없으면 null을 반환해주겠다라는 뜻 |  기존 : session.isNew()를 사용해서 체크하였음.
 
         // 로그인상태 체크여부 실질적 부분  : session.getAttribute("loginInfo")
-        // session =null이면 로그인상태 체크를 할 필요가 없고 , 체크가 실행 되서도 안된다 . ! 
+        // session =null이면 로그인상태 체크를 할 필요가 없고 , 체크가 실행 되서도 안된다 . !
         if (session != null && session.getAttribute("loginInfo")!= null){    // loginInfo 파라미터가 null 이 아니여야 한다는 뜻.
             log.info("로그인 상태 !!!");
             return true;        // 다음으로 넘어가려면 return true를 처리해줘야 넘어갈 수 있다.
