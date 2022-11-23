@@ -9,7 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Setter
 @ToString
 @Builder
-public class MemberRequest {
+public class MemberRegRequest {
     // 사용자로부터 Form을 통하여 받는 데이터 처리
 //    private int idx;    // 받는데이터기 때문에 idx 불필요
     private String uid;
@@ -18,13 +18,12 @@ public class MemberRequest {
     private String uname;
     private MultipartFile uphoto;   // 데이터베이스엔 문자열(String)로 저장, 가져오는건 멀티파트파일(MultipartFile)형식 이기에 고민해봐야한다.
 
-    public Member tomember(){
+    public Member toMember(){
         Member member  = Member.builder()
                 .uid(this.uid)
                 .upw(this.upw)
                 .uname(this.uname)
                 .build();
-
 
         return member;
     }

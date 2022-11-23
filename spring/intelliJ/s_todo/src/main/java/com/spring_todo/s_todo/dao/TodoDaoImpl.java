@@ -2,6 +2,7 @@ package com.spring_todo.s_todo.dao;
 
 import com.spring_todo.s_todo.domain.TodoDTO;
 import lombok.Cleanup;
+import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.sql.Connection;
@@ -14,7 +15,7 @@ import java.util.Collections;
 import java.util.List;
 
 
-@RequestMapping("/todoDao")
+@Repository(value = "todoDao")
 public class TodoDaoImpl implements TodoDao {
     @Override
     public List<TodoDTO> selectAll(Connection conn) throws SQLException {

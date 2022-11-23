@@ -13,5 +13,26 @@
 </head>
 <body>
     <h1>상세페이지</h1>
+
+    <table>
+        <tr>
+            <td>번호</td>
+            <td><input type="text" name="tno" value="${param.tno}" readonly></td>
+        </tr>
+        <tr>
+            <td>할일</td>
+            <td><input type="text" name="todo" capture="${todo.todo}" readonly></td>
+        </tr>
+        <tr>
+            <td>기한</td>
+            <td><input type="date" name="dueDate" value="${todo.dueDate}" readonly></td>
+        </tr>
+        <tr>
+            <td>상태</td>
+            <td><input type="checkbox" name="finished" ${todo.finshied ? 'checked' : ''}></td>
+        </tr>
+    </table>
+
+    <a href="/todo/modify?tno=${param.tno}">수정 &#166; 삭제</a> <a href="/todo/list">Todo List</a>
 </body>
 </html>
