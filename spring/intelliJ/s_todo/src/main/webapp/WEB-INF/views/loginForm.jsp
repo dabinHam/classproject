@@ -12,7 +12,7 @@
 </head>
 <body>
 <h1>로그인 폼</h1>
-<form action="#" method="post" enctype="multipart/form-data">
+<form method="post" enctype="multipart/form-data">
 
   <table>
     <tr>
@@ -21,7 +21,7 @@
     </tr>
     <tr>
       <td>비밀번호</td>
-      <td><input type="password" name="upw"></td>
+      <td><input type="password" name="upw"> </td>
     </tr>
     <tr>
       <td></td>

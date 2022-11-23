@@ -12,6 +12,7 @@ import java.util.List;
 @Repository(value = "todoDao")  // 이름변경
 public class TodoDaoImpl implements TodoDao {
 
+    // 전체 리스트 출력
     @Override
     public List<TodoDTO> selectAll(Connection conn) throws SQLException {
 
@@ -28,12 +29,13 @@ public class TodoDaoImpl implements TodoDao {
             } while (rs.next());
         } else {
             // 비어 있는 리스트 생성 : null 값으로 반화할 경우 상황에 따라 null 비교하는 구문이 필요!!
-            result = Collections.emptyList();;
+            result = Collections.emptyList();
         }
 
         return result;
     }
 
+    // 하나의 항목 출력
     private TodoDTO toTodoDto(ResultSet rs) throws SQLException {
 
         TodoDTO dto = new TodoDTO(
@@ -55,6 +57,7 @@ public class TodoDaoImpl implements TodoDao {
 
     }
 
+    // 할일 등록
     @Override
     public TodoDTO selectByTno(Connection conn, long tno) throws SQLException {
 
@@ -99,6 +102,8 @@ public class TodoDaoImpl implements TodoDao {
         return result;
     }
 
+
+    // 할일 삭제
     @Override
     public int deleteTodo(Connection conn, long dto) throws SQLException {
 

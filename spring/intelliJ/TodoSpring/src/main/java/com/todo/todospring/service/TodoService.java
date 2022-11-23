@@ -42,6 +42,7 @@ public class TodoService {
         return list;
     }
 
+
     public TodoDTO getTodo(long tno) {
         TodoDTO todoDTO = null;
         try {
@@ -56,6 +57,7 @@ public class TodoService {
         return todoDTO;
     }
 
+    // 할일 추가
     public int insertTodo(TodoDTO todoDTO) {
         int result = 0;
 
@@ -70,6 +72,7 @@ public class TodoService {
         return result;
     }
 
+    // 할일 수정
     public int modify(TodoDTO todoDTO) {
         int result = 0;
 
@@ -84,6 +87,7 @@ public class TodoService {
         return result;
     }
 
+    // 할일 삭제
     public int deleteBytno(long tno) {
         int result = 0;
         try {

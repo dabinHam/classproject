@@ -12,7 +12,7 @@ public class ConnectionProvider {
     private static ConnectionProvider instance = new ConnectionProvider();
 
     private ConnectionProvider(){
-
+        // JDBC 를 연결하기 위한 설정
         HikariConfig config = new HikariConfig();
         config.setDriverClassName("com.mysql.cj.jdbc.Driver");
         config.setJdbcUrl("jdbc:mysql://localhost:3306/project");

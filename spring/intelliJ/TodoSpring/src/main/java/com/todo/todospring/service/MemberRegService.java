@@ -41,7 +41,7 @@ public class MemberRegService {
 
             // currentTimeMillis() : 밀리초 단위
 //            newFileName = System.currentTimeMillis() + regRequest.getUphoto().getOriginalFilename();
-            // nanoTime() | 난수발생 으로 처리해도된다. 문자형식으로 해놓고  문자열의형태가 이미지로 처리되는것.
+            // nanoTime() 또는 난수발생 으로 처리해도된다. 문자형식으로 해놓고  문자열의형태가 이미지로 처리되는것.
             newFileName = System.nanoTime() + regRequest.getUphoto().getOriginalFilename();
             log.info(newFileName);
 
