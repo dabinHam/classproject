@@ -81,7 +81,7 @@ public class TodoDaoImpl implements TodoDao {
         String sql = "insert into tbl_todo (todo, dueDate) values (?, ?)";
         @Cleanup PreparedStatement pstmt = conn.prepareStatement(sql);
         pstmt.setString(1, dto.getTodo());
-        pstmt.setDate(2, Date.valueOf(dto.getDueDate()));
+        pstmt.setDate(2, Date.valueOf(dto.getDuedate()));
         result = pstmt.executeUpdate();
 
         return result;
@@ -94,7 +94,7 @@ public class TodoDaoImpl implements TodoDao {
         String sql = "update tbl_todo set todo=?, dueDate=?, finished=? where tno=?";
         @Cleanup PreparedStatement pstmt = conn.prepareStatement(sql);
         pstmt.setString(1, dto.getTodo());
-        pstmt.setDate(2, Date.valueOf(dto.getDueDate()));
+        pstmt.setDate(2, Date.valueOf(dto.getDuedate()));
         pstmt.setBoolean(3, dto.isFinished());
         pstmt.setLong(4, dto.getTno());
         result = pstmt.executeUpdate();

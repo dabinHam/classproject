@@ -36,7 +36,7 @@ public class TodoModifyController {
     public String modify(
 //            @RequestParam("tno") int tno,
 //            @RequestParam("todo") String todo,
-//            @RequestParam("dueDate") String dueDate,
+//            @RequestParam("dueDate") String duedate,
 //            @RequestParam(value = "finished",required = false )
 //            String finished
             TodoDTO todoDTO
