@@ -5,6 +5,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -37,7 +38,8 @@ public class LoginController {
                         HttpServletRequest request,
                         HttpServletResponse response,
                         @ModelAttribute("req") LoginRequest loginRequest,   // @ModelAttribute("req"): 특정객체를 view로 공유할 수 있게 사용할 수 있다. | name을 부여해줄수있음
-                        @RequestParam Map paramMap      // 여러 파라미터들을 Map안에 넣는다.
+                        @RequestParam Map paramMap,      // 여러 파라미터들을 Map안에 넣는다.
+                        RedirectAttributes redirectAttributes
                         ){
 
         String uId2 = request.getParameter("uid");
@@ -55,8 +57,11 @@ public class LoginController {
 
         request.getSession().setAttribute("loginInfo", uid);
 
+        redirectAttributes.addAttribute("type","test");
+        redirectAttributes.addFlashAttribute("ermsg","에러메시지");
+
 //        return "login/login";   // "redirect:/index"    => return
-        return "redirect:/mypage/mypage1";
+        return "redirect:/mypage/mypage1";      // ?type=test       <- 로 나옴.
     }
 
     @GetMapping("/info")    // http://localhost:8080/login/info

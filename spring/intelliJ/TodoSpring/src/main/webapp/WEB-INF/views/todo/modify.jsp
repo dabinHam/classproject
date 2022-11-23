@@ -33,7 +33,7 @@
         </tr>
         <tr>
             <td>상태 </td>
-            <td><input type="checkbox" name="finished" value="1" ${todo.finished ? 'checked' : ''} > </td>
+            <td><input type="checkbox" name="finished" ${todo.finished ? 'checked' : ''} > </td><%--input에 value = "1" 이 들어가 있어서 수정을 해도 완료중으로 뜨지 않았음 삭제 처리함.--%>
         </tr>
         <tr>
             <td></td>

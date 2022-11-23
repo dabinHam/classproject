@@ -42,4 +42,18 @@
 
 
 
+    <!--변환해야 하는 타입이 있다면 클래스 생성후 여기에 추가!!-->
+    <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="formatters">
+            <set>
+                <bean class="com.todo.todospring.formatter.LocalDateFomatter" />
+                <bean class="com.todo.todospring.formatter.CheckBoxFormatter" />
+            </set>
+        </property>
+    </bean>
+
+    <mvc:annotation-driven conversion-service="conversionService"/>
+
+
+
 </beans>

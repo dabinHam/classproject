@@ -2,6 +2,7 @@ package com.firstcoding.mvc.springmvc.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -25,6 +26,19 @@ public class SampleController {
 
     }
 
+    @RequestMapping("/sample4")
+    @ResponseBody
+    public String page(){
+        return "Y";
+    }
+
+    @RequestMapping("/sample5")
+    @ResponseBody
+    public String page2(int num){
+        String str = null;
+        str.trim();
+        return String.valueOf(num); // 정상처리 : sample5?num=10        | 오류발생 : sample5 , sample5?num=aaa
+    }
 
 
 

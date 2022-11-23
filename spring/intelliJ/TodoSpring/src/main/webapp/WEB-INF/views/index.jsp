@@ -13,14 +13,14 @@
 </head>
 <style>
     img{width: 150px; height: 100px;}
+    li{list-style: none;}
 </style>
 <body>
-<h1>Todo Project</h1>
+<h1>${title}</h1>
 
 <ul>
-    <li>프로젝트 이름 : </li>
-    <li>프로젝트 기능 : </li>
-    <li><a href="/todo/list">Todo List</a> </li>
+<%--    <li>프로젝트 이름 : </li>--%>
+<%--    <li>프로젝트 기능 : </li>--%>
 
     <c:if test="${loginInfo eq null}">
     <%--로그인이 되어 있지 않을때 보이는 화면 : 로그인, 회원가입--%>
@@ -30,6 +30,7 @@
 
     <c:if test="${loginInfo ne null}">
     <%--로그인이 되어있을 때 보이는 화면 : 로그아웃--%>
+    <li><a href="/todo/list">Todo List</a> </li>
     <li>아이디 : ${loginInfo.uid} , 이름 : (${loginInfo.uname}) <img src="/uploadfile/member/${loginInfo.uphoto}" alt="프로필사진"></li>
     <li><a href="/logout">로그아웃</a></li>
     </c:if>

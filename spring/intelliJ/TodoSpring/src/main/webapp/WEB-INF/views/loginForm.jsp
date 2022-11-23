@@ -21,7 +21,7 @@
     </tr>
     <tr>
       <td>비밀번호</td>
-      <td><input type="password" name="upw"\> </td>
+      <td><input type="password" name="upw"></td>
     </tr>
     <tr>
       <td></td>

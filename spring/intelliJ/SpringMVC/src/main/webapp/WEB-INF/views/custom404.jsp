@@ -1,18 +1,17 @@
 <%--
   Created by IntelliJ IDEA.
   User: yungwisang
-  Date: 2022/11/21
-  Time: 4:51 PM
+  Date: 2022/11/23
+  Time: 11:47 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>My Page 1</title>
+    <title>Title</title>
 </head>
 <body>
-  <h1>My Page 1</h1>
-    <h2>type : ${param.type}</h2>
-    <h2>error message : ${ermsg}</h2>
+  <h1>요청하신 페이지를 찾을 수 없습니다.</h1>
+  <a href="/index.jsp"> 홈으로 이동</a>
 </body>
 </html>
