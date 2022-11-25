@@ -12,6 +12,45 @@
             select * from dept
         </select>
 
+        <select id="selectByOption" parameterType="com.app.manager.domain.DeptSearchOption" resultType="com.app.manager.domain.DeptDTO">
+            select * from dept
+           <!-- where daname like | loc like  | (검색을 안했을때) 사용자의 선택에 따라 변경될 수 있다. searchType + keyword  함께 들어가야함
+           아무것도 들어오지 않으면 where 가 생기지 않지만 키워드가 들어온다면 where절이 생성되어 처리시켜준다. -->
+            <where>
+                <if test="searchType != null and keyword !=null">
+                    <if test="searchType == 'dname'">
+<!--                        dname like concat('%', #{keyword},'%') &lt;!&ndash;concat() : 문자열을 붙혀주어 완성시켜주는것&ndash;&gt;-->
+                        <include refid="searchDname"/>
+                    </if>
+                    <if test="searchType == 'loc'">
+<!--                        loc like concat('%',#{keyword},'%')-->
+                        <include refid="searchLoc"/>
+                    </if>
+                </if>
+            </where>
+        </select>
+
+        <sql id="searchDname">
+            dname like concat('%', #{keyword},'%')
+        </sql>
+
+        <sql id="searchLoc">
+            loc like concat('%',#{keyword},'%')
+        </sql>
+
+        <select id="selectByDeptnos" parameterType="list" resultType="com.app.manager.domain.DeptDTO">
+            select * from dept
+
+            <where>
+                <if test="list != null and list.size != 0">
+                    deptno IN
+                    <foreach collection="list" item="item" index="index" separator="," open="(" close=")"> <!--(10,20,30)  separator : 사이에 들어갈 요소-->s
+                        #{item}
+                    </foreach>
+                </if>
+            </where>
+        </select>
+
         <select id="selectBydeptno" resultType="com.app.manager.domain.DeptDTO">
             select * from dept where deptno=#{deptno}         <!--변수 처리시 # 사용-->
         </select>

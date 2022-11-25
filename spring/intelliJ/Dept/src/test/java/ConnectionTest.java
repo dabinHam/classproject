@@ -1,4 +1,5 @@
 import com.app.manager.domain.DeptDTO;
+import com.app.manager.domain.DeptSearchOption;
 import com.app.manager.mapper.DeptMapper;
 import com.app.manager.mapper.TimeMapper;
 import lombok.extern.log4j.Log4j2;
@@ -12,6 +13,8 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 @Log4j2
 @ExtendWith(SpringExtension.class) // Spring 내부에서 컨테이너 생성해주는거
@@ -28,6 +31,21 @@ public class ConnectionTest {
     @Autowired(required = false)
     private DeptMapper deptMapper;
 
+    @Test
+    public void deptSelectByDeptnosTest(){
+
+        List<Integer> list = new ArrayList<>();
+//        list.add(10);
+//        list.add(30);
+
+        log.info(">>>>>>>>>>>>>>>>> IN 연산 테스트 "+ deptMapper.selectByDeptnos(list));
+    }
+
+    @Test
+    public void deptSelectByOptionTest(){
+        log.info(deptMapper.selectByOption(DeptSearchOption.builder().searchType(null).keyword(null).build()));
+    }
+
 
     /* 실제로 할때엔 각각 메소드 만들어서 테스트 하기! */
     @Test
@@ -35,7 +53,7 @@ public class ConnectionTest {
        log.info("LIST >>>>>>>>>>  " + deptMapper.selectAll());
 //        log.info("DEPT 정보 >>>>>>>>>>  " + deptMapper.selectBydeptno(40));
 //        DeptDTO deptDTO = new DeptDTO(50,"test","testLoc");
-        DeptDTO deptDTO = new DeptDTO(50,"DEV","SEOUL");
+        DeptDTO deptDTO = new DeptDTO(10,"DEV","SEOUL");
 //        log.info("DEPT 정보 >>>>>>>>>>  " + deptMapper.insertDept(deptDTO));
 //        log.info("DEPT 수정 >>>>>>>>>>  " + deptMapper.updateDept(deptDTO));
        // log.info("DEPT 삭제 >>>>>>>>>>  " + deptMapper.deleteByDeptno(50));
