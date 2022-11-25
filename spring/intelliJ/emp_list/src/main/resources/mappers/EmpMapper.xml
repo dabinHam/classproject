@@ -1,0 +1,14 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--MyBatis에서의 필수사항-->
+<!--namespace : class fullname-->
+<mapper namespace="com.app.manager.mapper.EmpMapper">
+    <!--empno ename job mgr hiredate sal comm deptno-->
+    <!--selectAll , insertEmp, deleteByEmpno , selectByEmpno, updateEmp-->
+
+    // 전체리스트 출력
+    <select id="selectAll"></select>
+
+</mapper>
