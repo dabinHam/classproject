@@ -1,0 +1,31 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--MyBatis에서의 필수사항-->
+<!--namespace : class fullname-->
+<mapper namespace="com.app.manager.mapper.DeptMapper">
+
+        <!--method = id 일치해야한다.  result : full name으로 적어줘야 한다.-->
+        <!--select : 응답에 대한 처리 -->
+        <select id="selectAll" resultType="com.app.manager.domain.DeptDTO">
+            select * from dept
+        </select>
+
+        <select id="selectBydeptno" resultType="com.app.manager.domain.DeptDTO">
+            select * from dept where deptno=#{deptno}         <!--변수 처리시 # 사용-->
+        </select>
+
+        <insert id="insertDept" parameterType="com.app.manager.domain.DeptDTO">
+            insert into dept values (#{deptno}, #{dname}, #{loc})
+        </insert>
+
+        <!--update : 정수값으로 처리가 된다.-->
+        <update id="updateDept" parameterType="com.app.manager.domain.DeptDTO">
+            update dept set dname=#{dname} , loc=#{loc} where deptno=#{deptno}
+        </update>
+
+        <delete id="deleteByDeptno">
+            delete from dept where deptno=#{no}
+        </delete>
+</mapper>
