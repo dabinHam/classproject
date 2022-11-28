@@ -33,15 +33,14 @@ public class EmpRegController {
         log.info("reg Post ...");
         log.info(empDTO);
 
-//        if (bindingResult.hasErrors()){
-//            log.info(bindingResult.getAllErrors());
-//            for(ObjectError objectError: bindingResult.getAllErrors()){
-//                log.info(objectError.getCodes()[2] + " : " + objectError.getDefaultMessage()
-//                ());
-//            }
-//        }
-//
-//        empRegService.insertEmp(empDTO);
+        if (bindingResult.hasErrors()){
+            log.info(bindingResult.getAllErrors());
+            for(ObjectError objectError: bindingResult.getAllErrors()){
+                log.info(objectError.getCodes()[2] + " : " + objectError.getDefaultMessage());
+            }
+        }
+
+
         empRegService.insertEmp(empDTO);
         return "redirect:/emp/list";
     }

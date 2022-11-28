@@ -14,7 +14,7 @@
         select * from emp
     </select>
 
-    <!--입력-->
+    <!--등록-->
     <insert id="insertEmp" parameterType="com.myproject.emp.domain.EmpDTO">
         insert into emp values (#{empno}, #{ename}, #{job} , #{mgr} , #{hiredate} , #{sal} , #{comm} , #{deptno} )
     </insert>

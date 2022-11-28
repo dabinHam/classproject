@@ -32,7 +32,7 @@
             <img class="mr-3" src="https://icons.getbootstrap.com/assets/img/icons-hero.png" alt="" width="48" height="48">
             <div class="lh-150">
                 <h6 class="mb-0 text-white lh-150" >사원정보 수정</h6>
-                <small>사원의정보를 수정 합니다.</small>
+                <small>사원의 정보를 수정 합니다.</small>
             </div>
         </div>
 
@@ -40,35 +40,35 @@
             <table class="table">
                 <tr>
                     <td>사원번호</td>
-                    <td><input type="number" name="empno" value="${emp.empno}" readonly></td>
+                    <td><input type="number" name="empno" value="${emp.empno}" placeholder="자동으로 생성됩니다."></td>
                 </tr>
                 <tr>
                     <td>사원이름</td>
-                    <td><input type="number" name="empno" value="${emp.ename}" readonly></td>
+                    <td><input type="text" name="ename" value="${emp.ename}" placeholder="이름"></td>
                 </tr>
                 <tr>
                     <td>직급</td>
-                    <td><input type="number" name="empno" value="${emp.job}" readonly></td>
+                    <td><input type="text" name="job" value="${emp.job}"></td>
                 </tr>
                 <tr>
-                    <td>직송상사 사번</td>
-                    <td><input type="number" name="empno" value="${emp.mgr}" readonly></td>
+                    <td>담당자 사번</td>
+                    <td><input type="number" name="mgr" value="${emp.mgr}"></td>
                 </tr>
                 <tr>
                     <td>입사년도</td>
-                    <td><input type="number" name="empno" value="${emp.hiredate}" readonly></td>
+                    <td><input type="text" name="hiredate" value="${emp.hiredate}"></td>
                 </tr>
                 <tr>
                     <td>월급</td>
-                    <td><input type="number" name="empno" value="${emp.sal}" readonly></td>
+                    <td><input type="number" name="sal" value="${emp.sal}"></td>
                 </tr>
                 <tr>
                     <td>보너스</td>
-                    <td><input type="number" name="empno" value="${emp.comm}" readonly></td>
+                    <td><input type="number" name="comm" value="${emp.comm}"></td>
                 </tr>
                 <tr>
                     <td>부서번호</td>
-                    <td><input type="number" name="empno" value="${emp.deptno}" readonly></td>
+                    <td><input type="number" name="deptno" value="${emp.deptno}"></td>
                 </tr>
                 <tr>
                     <td></td>
@@ -76,9 +76,5 @@
                 </tr>
             </table>
         </form>
-
-        <small class="d-block text-right mt-3">
-            <a href="/emp/register" class="btn">사원 등록</a>
-        </small>
 </body>
 </html>

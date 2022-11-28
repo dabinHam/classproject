@@ -53,19 +53,25 @@
         </select>
 
 
-        <select id="selectBydeptno" resultType="com.app.manager.domain.DeptDTO">
+
+
+
+        <select id="selectByDeptno" resultType="com.app.manager.domain.DeptDTO">
             select * from dept where deptno=#{deptno}         <!--변수 처리시 # 사용-->
         </select>
 
+
+        <!--등록-->
         <insert id="insertDept" parameterType="com.app.manager.domain.DeptDTO">
             insert into dept values (#{deptno}, #{dname}, #{loc})
         </insert>
 
-        <!--update : 정수값으로 처리가 된다.-->
+        <!--update (수정) : 정수값으로 처리가 된다.-->
         <update id="updateDept" parameterType="com.app.manager.domain.DeptDTO">
-            update dept set dname=#{dname} , loc=#{loc} where deptno=#{deptno}
+            update dept set dname=#{dname} , job=#{job} where mgr=#{mgr}
         </update>
 
+        <!--삭제-->
         <delete id="deleteByDeptno">
             delete from dept where deptno=#{no}
         </delete>

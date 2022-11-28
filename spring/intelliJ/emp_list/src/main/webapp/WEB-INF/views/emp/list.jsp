@@ -93,10 +93,15 @@
 
     <div style="right: 0;" >
         <form>
-            검색
             <select name="searchType">
-                <option value="dname">부서이름</option>
-                <option value="loc">부서위치</option>
+                <option value="empno">사원번호</option>
+                <option value="ename">사원이름</option>
+                <option value="job">직급</option>
+                <option value="mgr">담당자 사번</option>
+                <option value="hiredate">입사년도</option>
+                <option value="sal">월급</option>
+                <option value="comm">보너스</option>
+                <option value="deptno">부서번호</option>
             </select>
             <input type="text" name="keyword">
             <input type="submit" value="검색">

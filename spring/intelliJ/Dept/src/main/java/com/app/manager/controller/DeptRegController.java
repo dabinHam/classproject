@@ -35,8 +35,7 @@ public class DeptRegController {
         if (bindingResult.hasErrors()){
             log.info(bindingResult.getAllErrors());
             for(ObjectError objectError: bindingResult.getAllErrors()){
-                log.info(objectError.getCodes()[2] + " : " + objectError.getDefaultMessage()
-                );
+                log.info(objectError.getCodes()[2] + " : " + objectError.getDefaultMessage());
             }
         }
 

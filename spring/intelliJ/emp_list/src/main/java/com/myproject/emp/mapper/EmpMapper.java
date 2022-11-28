@@ -16,9 +16,9 @@ public interface EmpMapper {
     int insertEmp(EmpDTO empDTO);
 
     // 삭제
-    EmpDTO deleteByEmpno(int empno);
+    int deleteByEmpno(int empno);
 
-    // 수정 | 상세 페이지
+    // 상세 페이지
     EmpDTO selectByEmpno(int empno);
 
     // 데이터 수정(변경) 처리

@@ -24,8 +24,10 @@
 
     <c:if test="${loginInfo eq null}">
     <%--로그인이 되어 있지 않을때 보이는 화면 : 로그인, 회원가입--%>
+    <h1>TodoList</h1>
     <li><a href="/login">로그인</a></li>
     <li><a href="/member/register">회원가입</a></li>
+    <li><a href="/todo/list">Todo List</a> </li>
     </c:if>
 
     <c:if test="${loginInfo ne null}">

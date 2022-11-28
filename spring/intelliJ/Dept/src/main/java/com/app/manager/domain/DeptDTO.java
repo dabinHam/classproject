@@ -26,5 +26,5 @@ public class DeptDTO {
 
 //@Future : 현재시간보다 미래여야한다.
 //@Email : 이메일 체크   @가 있는지 없는지 체크함
-//@NotBlank : 공백문자열 체크 "" < 처음에 띄워쓰기하는거 (NotEmpty 보다 타이트함 )
+//@NotBlank : 공백문자열 체크 "" < 처음에 띄워쓰기하는거 (NotEmpty 보다 타이트함 ) ,
 //@NotNull : Null값이 아니다
