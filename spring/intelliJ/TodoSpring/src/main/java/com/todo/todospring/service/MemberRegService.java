@@ -64,7 +64,7 @@ public class MemberRegService {
         }
         log.info(member);
 
-        @Cleanup Connection conn = ConnectionProvider.getInstance().getConnection();
+//        @Cleanup Connection conn = ConnectionProvider.getInstance().getConnection();
 
         return memberMapper.insertMember(member);
 

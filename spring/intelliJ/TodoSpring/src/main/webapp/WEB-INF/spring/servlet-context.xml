@@ -15,7 +15,7 @@
     -->
 
     <mvc:annotation-driven></mvc:annotation-driven>
-    <context:component-scan base-package="com.todo.todospring.controller"></context:component-scan>
+    <context:component-scan base-package="com.todo.todospring.controller"></context:component-scan> <!--기본 설정이되는 폴더 -->
 
 
     <!--정적파일 등록-->

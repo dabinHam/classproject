@@ -3,9 +3,11 @@ package com.todo.todospring.service;
 import com.todo.todospring.dao.TodoDao;
 import com.todo.todospring.dao.TodoDaoImpl;
 import com.todo.todospring.domain.TodoDTO;
+import com.todo.todospring.mapper.TodoMapper;
 import com.todo.todospring.util.ConnectionProvider;
 import lombok.Cleanup;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.sql.Connection;
@@ -16,23 +18,22 @@ import java.util.List;
 @Repository
 public class TodoService {
 
-    private final TodoDao dao;
+//    private final TodoDao dao;
+//    static private TodoService instance = new TodoService(new TodoDaoImpl());
+//    private TodoService(TodoDao dao) {
+//        this.dao = dao;
+//    }
+//    public static TodoService getInstance() {
+//        return instance;
+//    }
 
-    static private TodoService instance = new TodoService(new TodoDaoImpl());
-
-    private TodoService(TodoDao dao) {
-        this.dao = dao;
-    }
-
-    public static TodoService getInstance() {
-        return instance;
-    }
-
+    @Autowired
+    private TodoMapper todoMapper;
     public List<TodoDTO> getTodoList() {
         List<TodoDTO> list = null;
         try {
-            @Cleanup Connection conn = ConnectionProvider.getInstance().getConnection();
-            list = dao.selectAll(conn);
+//            @Cleanup Connection conn = ConnectionProvider.getInstance().getConnection();
+            list = todoMapper.selectAll();
             log.info(list);
         } catch (Exception e) {
             e.printStackTrace();
@@ -46,8 +47,8 @@ public class TodoService {
     public TodoDTO getTodo(long tno) {
         TodoDTO todoDTO = null;
         try {
-            @Cleanup Connection conn = ConnectionProvider.getInstance().getConnection();
-            todoDTO = dao.selectByTno(conn, tno);
+//            @Cleanup Connection conn = ConnectionProvider.getInstance().getConnection();
+            todoDTO = todoMapper.selectByTno(tno);
             log.info(todoDTO);
         } catch (Exception e) {
             e.printStackTrace();
@@ -62,8 +63,8 @@ public class TodoService {
         int result = 0;
 
         try {
-            @Cleanup Connection conn = ConnectionProvider.getInstance().getConnection();
-            result = dao.insertToDo(conn, todoDTO);
+//            @Cleanup Connection conn = ConnectionProvider.getInstance().getConnection();
+            result = todoMapper.insertToDo(todoDTO);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -77,8 +78,8 @@ public class TodoService {
         int result = 0;
 
         try {
-            @Cleanup Connection conn = ConnectionProvider.getInstance().getConnection();
-            result = dao.updateTodo(conn, todoDTO);
+//            @Cleanup Connection conn = ConnectionProvider.getInstance().getConnection();
+            result = todoMapper.updateTodo(todoDTO);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -91,8 +92,8 @@ public class TodoService {
     public int deleteBytno(long tno) {
         int result = 0;
         try {
-            @Cleanup Connection conn = ConnectionProvider.getInstance().getConnection();
-            result = dao.deleteTodo(conn, tno);
+//            @Cleanup Connection conn = ConnectionProvider.getInstance().getConnection();
+            result = todoMapper.deleteTodo(tno);
         } catch (Exception e) {
             e.printStackTrace();
         }
