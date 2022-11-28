@@ -11,7 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 @Log4j2
-@Repository
+//@Repository
 public class MemberDaoImpl implements MemberDao {
     @Override
     public int insertMember(Connection conn, Member member) throws SQLException {

@@ -31,12 +31,12 @@ public class TodoInsertController {
     @PostMapping
     public String insert(
 //            @RequestParam("todo") String todo,
-//            @RequestParam("dueDate") String dueDate
+//            @RequestParam("dueDate") String duedate
             TodoDTO todoDTO
     ){
 
         log.info(todoDTO.getTodo());
-        log.info(todoDTO.getDueDate());
+        log.info(todoDTO.getDuedate());
         log.info(todoDTO);
 
 //        TodoDTO todoDTO = TodoDTO.builder()

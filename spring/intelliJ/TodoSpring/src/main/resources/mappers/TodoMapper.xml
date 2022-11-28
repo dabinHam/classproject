@@ -1,0 +1,22 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--MyBatis에서의 필수사항-->
+<!--namespace : class fullname-->
+<mapper namespace="com.todo.todospring.mapper.TodoMapper">
+
+    <!--변하는게 없다면? 어노테이션으로 처리해도 된다..? -->
+<!--    <select id="selectAll" resultType="com.todo.todospring.domain.TodoDTO">-->
+<!--        Select * from tbl_todo-->
+<!--    </select>-->
+
+    <insert id="insertToDo" parameterType="com.todo.todospring.domain.TodoDTO">
+        insert into tbl_todo (todo, duedate) values (#{todo},#{duedate})
+    </insert>
+
+    <update id="updateTodo" parameterType="com.todo.todospring.domain.TodoDTO">
+        update tbl_todo set todo=#{todo}, duedate=#{duedate}, finished=#{finished} where tno=#{tno}
+    </update>
+
+</mapper>

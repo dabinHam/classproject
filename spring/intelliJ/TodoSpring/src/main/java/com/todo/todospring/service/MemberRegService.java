@@ -3,6 +3,7 @@ package com.todo.todospring.service;
 import com.todo.todospring.dao.MemberDao;
 import com.todo.todospring.domain.Member;
 import com.todo.todospring.domain.MemberRegRequest;
+import com.todo.todospring.mapper.MemberMapper;
 import com.todo.todospring.util.ConnectionProvider;
 import lombok.Cleanup;
 import lombok.extern.log4j.Log4j2;
@@ -20,10 +21,10 @@ import java.sql.Connection;
 public class MemberRegService {
 
     @Autowired
-    private MemberDao memberDao;
+    private MemberMapper memberMapper;
 
     // 사용자 요청 데이터를 받고 , 파일 업로드 처리 , Dao insert 요청
-    public int memberReg(MemberRegRequest regRequest, HttpServletRequest request) throws Exception { // 사용자 요청 데이터를 받고 : (MemberRegRequest)
+    public int memberMapper(MemberRegRequest regRequest, HttpServletRequest request) throws Exception { // 사용자 요청 데이터를 받고 : (MemberRegRequest)
 
         String newFileName = null;
 
@@ -65,7 +66,7 @@ public class MemberRegService {
 
         @Cleanup Connection conn = ConnectionProvider.getInstance().getConnection();
 
-        return memberDao.insertMember(conn , member);
+        return memberMapper.insertMember(member);
 
     }
 }

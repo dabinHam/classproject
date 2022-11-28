@@ -1,0 +1,21 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--MyBatis에서의 필수사항-->
+<!--namespace : class fullname-->
+<mapper namespace="com.todo.todospring.mapper.MemberMapper">
+
+    <insert id="insertMember" parameterType="com.todo.todospring.domain.Member">
+
+        insert into member(uid, upw, uname, uphoto) value(#{uid},#{upw},#{uname},#{uphoto})
+
+    </insert>
+
+    <select id="selectByIdPw" resultType="com.todo.todospring.domain.Member">
+
+        select * from member where uid=#{param1} and upw=#{param2}
+
+    </select>
+
+</mapper>

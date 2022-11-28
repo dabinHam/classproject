@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-@Repository(value = "todoDao")  // 이름변경
+//@Repository(value = "todoDao")  // 이름변경
 public class TodoDaoImpl implements TodoDao {
 
     // 전체 리스트 출력
@@ -78,7 +78,7 @@ public class TodoDaoImpl implements TodoDao {
     public int insertToDo(Connection conn, TodoDTO dto) throws SQLException {
 
         int result = 0;
-        String sql = "insert into tbl_todo (todo, dueDate) values (?, ?)";
+        String sql = "insert into tbl_todo (todo, duedate) values (?, ?)";
         @Cleanup PreparedStatement pstmt = conn.prepareStatement(sql);
         pstmt.setString(1, dto.getTodo());
         pstmt.setDate(2, Date.valueOf(dto.getDuedate()));
@@ -91,7 +91,7 @@ public class TodoDaoImpl implements TodoDao {
     public int updateTodo(Connection conn, TodoDTO dto) throws SQLException {
 
         int result = 0;
-        String sql = "update tbl_todo set todo=?, dueDate=?, finished=? where tno=?";
+        String sql = "update tbl_todo set todo=?, duedate=?, finished=? where tno=?";
         @Cleanup PreparedStatement pstmt = conn.prepareStatement(sql);
         pstmt.setString(1, dto.getTodo());
         pstmt.setDate(2, Date.valueOf(dto.getDuedate()));
