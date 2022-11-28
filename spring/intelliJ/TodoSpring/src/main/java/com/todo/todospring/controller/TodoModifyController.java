@@ -19,7 +19,7 @@ import java.time.LocalDate;
 @RequestMapping("/todo/modify")
 public class TodoModifyController {
 
-    @Autowired
+    @Autowired(required = false)
     private TodoService todoService;
 
     @GetMapping

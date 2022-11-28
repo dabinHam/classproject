@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class TodoReadController {
 
-    @Autowired
+    @Autowired(required = false)
     private TodoService todoService;
 
     @GetMapping("/todo/read")

@@ -27,7 +27,7 @@ public class TodoService {
 //        return instance;
 //    }
 
-    @Autowired
+    @Autowired(required = false)
     private TodoMapper todoMapper;
     public List<TodoDTO> getTodoList() {
         List<TodoDTO> list = null;

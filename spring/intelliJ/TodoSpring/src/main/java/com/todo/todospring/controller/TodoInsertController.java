@@ -4,6 +4,7 @@ package com.todo.todospring.controller;
 import com.todo.todospring.domain.TodoDTO;
 import com.todo.todospring.service.TodoService;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,12 +18,13 @@ import java.time.LocalDate;
 @RequestMapping("/todo/register")
 public class TodoInsertController {
 
-    private  final TodoService todoService;
+//    private  final TodoService todoService;
+//    public TodoInsertController(TodoService todoService) {
+//        this.todoService = todoService;
+//    }
 
-    public TodoInsertController(TodoService todoService) {
-        this.todoService = todoService;
-    }
-
+    @Autowired(required = false)
+    private TodoService todoService;
     @GetMapping
     public String getInsertForm(){
         return "todo/register";

@@ -19,7 +19,7 @@ import javax.servlet.http.HttpSession;
 @RequestMapping("/member/register")
 public class MemberRegController {
 
-    @Autowired
+    @Autowired(required = false)
     private MemberRegService regService;
 
     @GetMapping

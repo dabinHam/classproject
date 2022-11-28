@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class TodoRemoveController {
 
-    @Autowired
+    @Autowired(required = false)
     private TodoService todoService;
 
     @PostMapping("/todo/remove")
