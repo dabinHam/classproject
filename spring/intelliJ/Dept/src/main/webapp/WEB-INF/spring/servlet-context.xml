@@ -15,7 +15,7 @@
     <!--com.app.manager(상위패키지)로 경로를 지정하면 bean이 2번 생길수 있음.-->
 
 
-    <!--CSS-->
+    <!--CSS , js-->
     <mvc:resources mapping="/css/**" location="/css/"/>
     <mvc:resources mapping="/js/**" location="/js/"/>
 

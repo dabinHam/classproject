@@ -37,7 +37,7 @@ dependencies {
     implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.31'
     implementation group: 'com.zaxxer', name: 'HikariCP', version: '5.0.1'
 
-
+    // dataSource
     implementation group: 'org.springframework', name: 'spring-jdbc', version: '5.3.19'
     implementation group: 'org.springframework', name: 'spring-tx', version: '5.3.19'
     implementation 'org.mybatis:mybatis:3.5.9'
@@ -65,7 +65,7 @@ dependencies {
     // jstl
     implementation group: 'jstl', name: 'jstl', version: '1.2'
 
-
+    // validator
     implementation group: 'org.hibernate', name: 'hibernate-validator', version: '6.2.1.Final'
 
 

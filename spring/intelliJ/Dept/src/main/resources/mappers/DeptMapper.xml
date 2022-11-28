@@ -12,6 +12,7 @@
             select * from dept
         </select>
 
+        <!--검색-->
         <select id="selectByOption" parameterType="com.app.manager.domain.DeptSearchOption" resultType="com.app.manager.domain.DeptDTO">
             select * from dept
            <!-- where daname like | loc like  | (검색을 안했을때) 사용자의 선택에 따라 변경될 수 있다. searchType + keyword  함께 들어가야함
@@ -50,6 +51,7 @@
                 </if>
             </where>
         </select>
+
 
         <select id="selectBydeptno" resultType="com.app.manager.domain.DeptDTO">
             select * from dept where deptno=#{deptno}         <!--변수 처리시 # 사용-->
