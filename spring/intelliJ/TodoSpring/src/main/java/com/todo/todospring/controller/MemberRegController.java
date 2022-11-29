@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 @Log4j2
 @Controller
@@ -30,7 +31,7 @@ public class MemberRegController {
 
     @PostMapping
     public String reg(
-            MemberRegRequest regRequest,
+            @Valid MemberRegRequest regRequest,
             BindingResult bindingResult,
             HttpServletRequest request // 저장경로를 잡기위하여 설정
 
@@ -45,6 +46,6 @@ public class MemberRegController {
         log.info(regRequest);
         regService.memberReg(regRequest, request);
 //        log.info(regRequest.toMember());
-        return "redirect:/index.jsp";   // 회원가입이 완료되면 다시 index로 돌아가게하기
+        return "redirect:/index";   // 회원가입이 완료되면 다시 index로 돌아가게하기
     }
 }

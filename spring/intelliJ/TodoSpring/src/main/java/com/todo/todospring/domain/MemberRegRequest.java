@@ -21,7 +21,7 @@ public class MemberRegRequest {
 
     @NotEmpty
     private String upw;
-    private String uuid;
+//    private String uuid;
 
     @NotEmpty
     private String uname;
@@ -35,7 +35,6 @@ public class MemberRegRequest {
                 .upw(this.upw)
                 .uname(this.uname)
                 .build();
-
         return member;
     }
 }

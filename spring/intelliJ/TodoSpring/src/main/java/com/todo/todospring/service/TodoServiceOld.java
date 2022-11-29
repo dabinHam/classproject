@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service    // 싱글톤형식으로 만들어줌.
+//@Service    // 싱글톤형식으로 만들어줌.
 @Log4j2
 public class TodoServiceOld {
 

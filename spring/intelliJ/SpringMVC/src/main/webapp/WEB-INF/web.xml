@@ -25,6 +25,7 @@
 <!--                /WEB-INF/spring/servlet-context1.xml 여러개 들어갈 수도 있음. -->
             </param-value>
         </init-param>
+
         <init-param>
             <param-name>throwExceptionIfNoHandlerFound</param-name>
             <param-value> true</param-value>
