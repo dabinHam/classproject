@@ -19,7 +19,8 @@
     </script>
 --%>
 
-<script>
+<%--
+    <script>
 
     const xhr = new XMLHttpRequest();
     // xhr.open('get','https://jsonplaceholder.typicode.com/todos/1');
@@ -37,7 +38,53 @@
             console.log("error", xhr.status, xhr.statusText)
         }
     }
-</script>
 
+    // callback
+    // get -> put -> get -> post
+    // get(put(get(post())))
+</script>
+--%>
+
+<%--fetch !! --%>
+<script>
+    const request = {
+        get(url) {
+            return fetch(url)
+        },
+        post(url, payload) {    // payload : parameter
+            return fetch(url, {
+                method: 'POST',
+                headers: {'content-Type': 'appliction/json'},    // headers는 {} <- key,value type으로 묶는다.
+                body: JSON.stringify(payload)
+            })
+        },
+        put(url, payload) {    // payload : parameter
+            return fetch(url, {
+                method: 'PUT',
+                headers: {'content-Type': 'appliction/json'},    // headers는 {} <- key,value type으로 묶는다.
+                body: JSON.stringify(payload)
+            })
+        },
+        delete(url){
+            return fetch(url, {method:'DELETE'})
+        }
+    }
+
+    request.get('/api/v1/depts/150')
+        .then(response =>{
+            if(!response.ok){
+                throw new Error(response.statusText);
+            }
+            return response.get('/api/v1/depts/10');
+        })
+        .then(response =>{
+            if(!response.ok){
+                throw new Error(response.statusText);
+            }
+            return response.json();
+        })
+        .then(list => console.log(list))
+        .catch(err => console.log(err))
+</script>
 </body>
 </html>

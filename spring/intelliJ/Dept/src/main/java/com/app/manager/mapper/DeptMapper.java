@@ -16,7 +16,7 @@ public interface DeptMapper {
     List<DeptDTO> selectByOption(DeptSearchOption searchOption);
     List<DeptDTO> selectByDeptnos(List<Integer> deptnos);
 
-    // 수정 | 상세 페이지
+    // 상세 페이지
     DeptDTO selectBydeptno(int deptno);
 
     // 데이터 수정(변경) 처리
