@@ -24,7 +24,7 @@
         delete from emp where empno=#{empno}
     </delete>
 
-    <!--수정 | 상세페이지-->
+    <!--상세페이지-->
     <select id="selectByEmpno" resultType="com.myproject.emp.domain.EmpDTO">
         select * from emp where empno=#{empno}
     </select>

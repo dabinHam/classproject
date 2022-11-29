@@ -43,11 +43,11 @@
         <table class="table">
             <tr>
                 <td>사원번호</td>
-                <td><input type="number" name="empno" value="${emp.empno}" placeholder="자동으로 생성됩니다."></td>
+                <td><input type="number" name="empno" value="${emp.empno}"></td>
             </tr>
             <tr>
                 <td>사원이름</td>
-                <td><input type="text" name="ename" value="${emp.ename}" placeholder="이름"></td>
+                <td><input type="text" name="ename" value="${emp.ename}"></td>
             </tr>
             <tr>
                 <td>직급</td>
@@ -59,7 +59,7 @@
             </tr>
             <tr>
                 <td>입사년도</td>
-                <td><input type="text" name="hiredate" value="${emp.hiredate}"></td>
+                <td><input type="date" name="hiredate" value="${emp.hiredate}"></td>
             </tr>
             <tr>
                 <td>월급</td>

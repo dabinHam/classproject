@@ -17,9 +17,9 @@
     <link href="/css/bootstrap/offcanvas.css" rel="stylesheet">
 
     <script>
-        function deleteDept(deptno){
+        function deleteEmp(empno){
             if(confirm("삭제하시겠습니까?")){
-                location.href = '/dept/delete?deptno='+deptno;
+                location.href = '/emp/delete?empno='+empno;
             }
         }
     </script>
