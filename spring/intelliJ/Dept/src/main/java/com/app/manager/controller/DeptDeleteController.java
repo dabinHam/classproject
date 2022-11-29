@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Log4j2
 @Controller
-public class DeptDeleceController {
+public class DeptDeleteController {
 
     @Autowired
     private DeptDeleteService deleteService;
@@ -20,6 +20,6 @@ public class DeptDeleceController {
         log.info("delect..." + deptno);
         deleteService.deleteDept(deptno);
         return "redirect:/dept/list";
-    }
+      }
 
 }
