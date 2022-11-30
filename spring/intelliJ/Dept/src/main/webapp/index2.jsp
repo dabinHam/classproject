@@ -54,14 +54,14 @@
         post(url, payload) {    // payload : parameter
             return fetch(url, {
                 method: 'POST',
-                headers: {'content-Type': 'appliction/json'},    // headers는 {} <- key,value type으로 묶는다.
+                headers: {'content-Type': 'appliction/json'},    /* headers는 {key,value} 로 묶는다.*/
                 body: JSON.stringify(payload)
             })
         },
         put(url, payload) {    // payload : parameter
             return fetch(url, {
                 method: 'PUT',
-                headers: {'content-Type': 'appliction/json'},    // headers는 {} <- key,value type으로 묶는다.
+                headers: {'content-Type': 'appliction/json'},    /* headers는 {key,value} 로 묶는다.*/
                 body: JSON.stringify(payload)
             })
         },
@@ -70,12 +70,12 @@
         }
     }
 
-    request.get('/api/v1/depts/150')
+    request.get('/api/v1/depts')
         .then(response =>{
             if(!response.ok){
                 throw new Error(response.statusText);
             }
-            return response.get('/api/v1/depts/10');
+            return request.get('/api/v1/depts/10');
         })
         .then(response =>{
             if(!response.ok){
@@ -85,6 +85,22 @@
         })
         .then(list => console.log(list))
         .catch(err => console.log(err))
+
+    request.post('/api/v1/depts', {deptno:11,dname:'test',loc:'test123'})
+        .then(response => {
+            if(!response.ok)
+                return new Error(response.statusText)
+            console.log(response)
+        })
+        .catch(err => console.log(err))
+
+    request.put('/api/v1/depts/22', {deptno:22,dname:'기획팀',loc:'부산'})
+        .catch(err => console.log(err))
+
+    request.delete('/api/v1/depts/22')
+        .then(response => {
+            console.log(response.body)
+        })
 </script>
 </body>
 </html>

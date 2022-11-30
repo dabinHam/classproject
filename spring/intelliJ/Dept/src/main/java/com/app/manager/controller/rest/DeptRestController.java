@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Log4j2
-@RestController
+@RestController     // 4.0 이상에서만 처리해줘야함. 4.0이하의 경우 @GetMapping 아래 @ResponseBody를 넣어줘야함
 @RequestMapping("/api/v1/depts")
 public class DeptRestController {
 
@@ -41,6 +41,7 @@ public class DeptRestController {
 
     @GetMapping
     public List<DeptDTO> getDeptList(){
+
         return deptListService.getList();
     }
 
@@ -50,7 +51,7 @@ public class DeptRestController {
         return deptReadService.getDept(deptno);
     }
 
-    @PostMapping    // Json데이터를 받아서 처리
+    @PostMapping    // JSON(형식의문자열) 데이터를 받아서 처리  |  ResponseEntity<>, HttpEntity<> : (응답처리, 미리정의해서 응답해야할때 사용)
     public ResponseEntity<String> regDept(@RequestBody DeptDTO deptDTO){
         /*
         {
@@ -71,11 +72,11 @@ public class DeptRestController {
         // ResponseEntity<String> => 응답 데이터를 제네릭으로 정의,
         // 객체 -> 응답데이터, http header, http status code
 //        return new ResponseEntity<>("insert OK", HttpStatus.OK);
-        return new ResponseEntity<>("insert OK", httpHeaders, HttpStatus.OK);
+        return new ResponseEntity<>("insert OK", httpHeaders, HttpStatus.OK);      // BAD_REQUEST : 400
     }
 
     @PutMapping("/{no}")
-    public HttpEntity<String> editDept(
+    public HttpEntity<String> editDept( //  ResponseEntity<>, HttpEntity<> : (응답처리, 미리정의해서 응답해야할때 사용)
             @PathVariable("no") int deptno,
             @RequestBody DeptDTO deptDTO
     ){
