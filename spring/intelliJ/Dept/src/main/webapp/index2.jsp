@@ -46,7 +46,8 @@
 --%>
 
 <%--fetch !! --%>
-<script>
+<%--
+    <script>
     const request = {
         get(url) {
             return fetch(url)
@@ -101,6 +102,23 @@
         .then(response => {
             console.log(response.body)
         })
+</script>
+--%>
+
+<%-- axios !! --%>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+
+    axios.get('/api/v1/depts/10')
+        .then(res => {console.log('res',res.data)
+            // 태그 캐스팅 -> 데이터 변경
+        })
+        .catch(err => console.log(err))
+
+    // 입력
+    axios.post('/api/v1/depts',{"deptno" : 35,"dname" : "DEV","loc" : "판교"})
+    .then(res => console.log(rest))
+    .catch(err => console.log(err))
 </script>
 </body>
 </html>

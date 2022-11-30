@@ -41,7 +41,6 @@ public class DeptRestController {
 
     @GetMapping
     public List<DeptDTO> getDeptList(){
-
         return deptListService.getList();
     }
 
