@@ -15,7 +15,7 @@ public interface DeptMapper2 {
 
     // 수정 | 상세 페이지
     @Select(" select * from dept where deptno=#{deptno}  ")
-    DeptDTO selectBydeptno(int deptno);
+    DeptDTO selectByDeptno(int deptno);
 
     // 데이터 수정(변경) 처리
     @Update("update dept set dname=#{dname} , loc=#{loc} where deptno=#{deptno}")
