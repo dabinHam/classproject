@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <h1>연산자</h1>
+    <ul>
+        <li> 10 + 20 = <span th:text="${10+20}"></span></li>
+        <li> 10 > 20 = <span th:text="${10>20}"></span></li>
+        <li> 10 = 20 = <span th:text="${10==20}"></span></li>
+        <li> 10 != 20 = <span th:text="${10!=20}"></span></li>
+        <li>삼항연산자 | 10 % 2 == 0 ? '짝수' : '홀수' => <span th:text="${10%2==0?'짝수':'홀수'}"></span></li>
+        <li>
+            <!--전달받은 데이터가 있으면 그냥 처리가 되고 없으면 뒤에 붙혀줄 예정
+             삼항연산자를 간단하게 처리-->
+            ${data}?:'데이터가 없습니다.' => <span th:text="${data}?:'데이터가 없습니다!!!'"></span>
+            <br>
+            ${nullData}?:'데이터가 없습니다.' => <span th:text="${nullData}?:'데이터가 없습니다!!!'"></span>
+        </li>
+        <li>
+            ${data}?:_ => <span th:text="${data}?:_">데이터가 없습니다.</span>
+            <br>
+            ${nullData}?:_ => <span th:text="${nullData}?:_">데이터가 없습니다.</span>  <!---->
+        </li>
+    </ul>
+
+    <h1>URI 경로 표현 : @{}</h1>
+    <ul>
+        <li><span th:text="@{/dept/list}"></span></li>
+        <li><span th:text="@{/dept/list(searchType=${'dname'}, keyword=${'AC'})}"></span></li>
+        <li><span th:text="@{/dept/list/{param1}(searchType=${'dname'}, keyword=${'AC'})}"></span></li>
+        <li><span th:text="@{/dept/list/{param1}(param1=${param1})}"></span></li>
+        <li><span th:text="@{/dept/list/{param1}(param1=${10})}"></span></li>
+
+        <li><a th:href="@{/dept/list}">LINK1</a></li>
+        <li><a th:href="@{/dept/list(searchType=${'dname'}, keyword=${'AC'})}">LINK2</a></li>
+        <li><a th:href="@{/dept/list/{param1}(param1=${10})}">LINK3</a></li>
+    </ul>
+
+
+    <h1>LocalDateTime 객체의 포맷팅</h1>
+    <ul>
+        <li>현재 시간의 출력 : <span th:text="${localDateTime}"></span></li>
+        <li>yyyy-MM-dd HH:mm:ss : <span th:text="${#temporals.format(localDateTime,'yyyy년 MM월 dd일 HH시 mm분 ss초')}"></span></li>
+        <li>yyyy-MM-dd /a hh:mm <span th:text="${#temporals.format(localDateTime,'yyyy.MM.dd /ahh:mm')}"></span></li>
+    </ul>
+
+    <h1>param, session의 속성</h1>
+    <ul>
+        <li>요청 파라미터 type = <span th:text="${param.type}"></span></li>
+        <li>세션의 속성값 loginData : <span th:text="${session.loginData}"></span> </li>
+    </ul>
+
+    <h1>지역 변수 선언과 활용</h1>
+    <div th:with="item=${deptList[3]}">
+        <ul>
+            <li>부서번호 : <span th:text="${item.deptno}"></span>0</li>
+            <li>부서이름 : <span th:text="${item.dname}"></span>0</li>
+            <li>부서위치 : <span th:text="${item.loc}"></span>0</li>
+        </ul>
+    </div>
+
+
+    <h1>Map객체 접근</h1>
+    <ul>
+        <li>10번 부서 : [[${deptMap['10']}]]</li>
+        <li>20번 부서 : [[${deptMap['20']}]]</li>
+        <li>10번 부서의 이름 : [[${deptMap['10'].dname}]]</li>
+        <li>20번 부서의 이름 : [[${deptMap['20'].dname}]]</li>
+        <li>20번 부서의 이름 : <span th:text="${deptMap['20'].dname}"></span></li>
+    </ul>
+
+
+    <h1>List객체 접근</h1>
+    <ul>
+        <li>첫번째 부서 : [[${deptList[0]}]]</li>
+        <li>첫번째 부서의 이름 : [[${deptList[0].dname}]]</li>
+        <li>첫번째 부서의 이름 : <span th:text="${deptList[0].dname}"></span></li>
+    </ul>
+
+
+    <h1>객체  출력하는 표현식</h1>
+    <ul>
+        <li>부서이름 :[[${dept.dname}]]</li><!-- ${data.filed} -->
+        <li th:text="${dept.dname}"></li>
+        <li>부서이름 : <span th:text="${dept.dname}"></span></li>
+        <li th:text="${'부서이름 :' +dept.dname}"></li>
+    </ul>
+
+<span th:text="${list}"></span>
+
+<h4>[[${list}]]</h4>
+
+</body>
+</html>

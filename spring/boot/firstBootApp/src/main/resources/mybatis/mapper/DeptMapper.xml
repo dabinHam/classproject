@@ -1,0 +1,75 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--MyBatis에서의 필수사항-->
+<!--namespace : class fullname-->
+<mapper namespace="com.first.app.mapper.DeptMapper">
+
+        <!--method = id 일치해야한다.  result : full name으로 적어줘야 한다.-->
+        <!--select : 응답에 대한 처리 -->
+        <select id="selectAll" resultType="com.first.app.domain.DeptDTO">
+            select * from dept
+        </select>
+
+        <!--검색-->
+        <!--<select id="selectByOption" parameterType="com.app.manager.domain.DeptSearchOption" resultType="com.app.manager.domain.DeptDTO">
+            select * from dept
+           &lt;!&ndash; where daname like | loc like  | (검색을 안했을때) 사용자의 선택에 따라 변경될 수 있다. searchType + keyword  함께 들어가야함
+           아무것도 들어오지 않으면 where 가 생기지 않지만 키워드가 들어온다면 where절이 생성되어 처리시켜준다. &ndash;&gt;
+            <where>
+                <if test="searchType != null and keyword !=null">
+                    <if test="searchType == 'dname'">
+&lt;!&ndash;                        dname like concat('%', #{keyword},'%') &lt;!&ndash;concat() : 문자열을 붙혀주어 완성시켜주는것&ndash;&gt;&ndash;&gt;
+                        <include refid="searchDname"/>
+                    </if>
+                    <if test="searchType == 'loc'">
+&lt;!&ndash;                        loc like concat('%',#{keyword},'%')&ndash;&gt;
+                        <include refid="searchLoc"/>
+                    </if>
+                </if>
+            </where>
+        </select>-->
+
+        <sql id="searchDname">
+            dname like concat('%', #{keyword},'%')
+        </sql>
+
+        <sql id="searchLoc">
+            loc like concat('%',#{keyword},'%')
+        </sql>
+
+        <!--<select id="selectByDeptnos" parameterType="list" resultType="com.first.app.domain.DeptDTO">
+            select * from dept
+
+            <where>
+                <if test="list != null and list.size != 0">
+                    deptno IN
+                    <foreach collection="list" item="item" index="index" separator="," open="(" close=")"> &lt;!&ndash;(10,20,30)  separator : 사이에 들어갈 요소&ndash;&gt;s
+                        #{item}
+                    </foreach>
+                </if>
+            </where>
+        </select>-->
+
+
+        <select id="selectByDeptno" resultType="com.first.app.domain.DeptDTO">
+            select * from dept where deptno=#{deptno}         <!--변수 처리시 # 사용-->
+        </select>
+
+
+        <!--등록-->
+        <insert id="insertDept" parameterType="com.first.app.domain.DeptDTO">
+            insert into dept values (#{deptno}, #{dname}, #{loc})
+        </insert>
+
+        <!--update (수정) : 정수값으로 처리가 된다.-->
+        <update id="updateDept" parameterType="com.first.app.domain.DeptDTO">
+            update dept set dname=#{dname} , job=#{job} where mgr=#{mgr}
+        </update>
+
+        <!--삭제-->
+        <delete id="deleteByDeptno">
+            delete from dept where deptno=#{no}
+        </delete>
+</mapper>
