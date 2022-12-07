@@ -3,8 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .title{
+            color: mediumpurple;
+            font-weight: bold;
+            font-style: italic;
+            font-size: larger;
+        }
+    </style>
 </head>
 <body>
+
+    <h1>모듈화 : insert, replace</h1>
+<!--    <div th:insert="~{파일경로 :: fragment}"></div>-->
+    <div th:insert="~{fragment/footer :: copy}"></div>
+    <div th:insert="fragment/footer :: copy"></div>
+
+    <div th:replace="fragment/footer :: copy"></div>
+
+    <!--tab 메뉴 사용시 용이하게 사용가능-->
+    <div th:replace="fragment/footer :: copyParam('전화번호 : 070-1111-7777','이메일 : kong@gmail.com')"></div>
+
+
+
+
+
+
+
+    <h1>반복문</h1>
+    <h3>부서 리스트</h3>
+
+
+    <table border="1">
+        <tr>
+            <th>부서번호</th>
+            <th>부서이름</th>
+            <th>부서위치</th>
+        </tr>
+
+        <th:block th:each="dept : ${deptList}">
+            <!--<tr th:each="요소 :원본 ">-->
+            <tr>
+                <td th:text="${dept.deptno}"></td>
+                <td>[[${dept.dname}]]</td>
+                <td th:text="${dept.loc}"></td>
+            </tr>
+        </th:block>
+    </table>
+
+
+    <table border="1">
+        <tr>
+            <th>index</th>
+            <th>count</th>
+            <th>부서번호</th>
+            <th>부서이름</th>
+            <th>부서위치</th>
+        </tr>
+        <!--<tr th:each="요소 :원본 ">-->
+        <tr th:each="dept, deptStat : ${deptList}" th:object="${dept}">
+            <td th:text="${deptStat.index}"></td>
+            <td th:text="${deptStat.count}"></td>
+            <td th:text="*{deptno}"></td>
+            <td th:text="*{dname}"></td>
+            <td th:text="*{loc}"></td>
+        </tr>
+    </table>
+
+
+
+    <table border="1">
+        <tr>
+            <th>index</th>
+            <th>count</th>
+            <th>부서번호</th>
+            <th>부서이름</th>
+            <th>부서위치</th>
+        </tr>
+    <!--<tr th:each="요소 :원본 ">-->
+        <tr th:each="dept, deptStat : ${deptList}">
+            <td th:text="${deptStat.index}"></td>
+            <td th:text="${deptStat.count}"></td>
+            <td th:text="${dept.deptno}"></td>
+            <td>[[${dept.dname}]]</td>
+            <td th:text="${dept.loc}"></td>
+        </tr>
+    </table>
+
+    <table border="1">
+        <tr>
+            <th>부서번호</th>
+            <th>부서이름</th>
+            <th>부서위치</th>
+        </tr>
+        <!--<tr th:each="요소 :원본 ">-->
+        <tr th:each="dept : ${deptList}">
+            <td th:text="${dept.deptno}"></td>
+            <td>[[${dept.dname}]]</td>
+            <td th:text="${dept.loc}"></td>
+        </tr>
+    </table>
+
+
+
+
+
+    <h1>조건식</h1>
+    <div th:with="age=${20}">
+        <ul>
+            <li><span th:text="${age}"></span></li>
+            <li>
+                <span th:text="성년" th:if="${age > 19}"></span>
+
+                <span th:text="미성년" th:unless="${age > 19}"></span>
+<!--                <span th:text="미성년" th:if="${age < 19}"></span>-->
+            </li>
+            <li th:switch="${age}">
+                <span th:case="15">15살</span>
+                <span th:case="20">20살</span>
+                <span th:case="25">25살</span>
+                <span th:case="*">기타</span>
+            </li>
+        </ul>
+        <!--분기 | 반복-->
+        <!--분기 : inline태그 사용 , 반복 : th:block 사용 -->
+        <th:block th:if="${age>19}">
+            <div>성인입니다.</div>
+            <div>음주가 가능합니다.</div>
+            <div>술집에는 출입이 가능합니다.</div>
+        </th:block>
+
+    </div>
+
+
+
+    <h1>속성의 추가/변경</h1>
+    <ul>
+        <li><span>안녕하세요</span></li>
+        <li><span th:class="${'title'}">안녕하세요</span></li>
+        <li><span class="sub" th:class="${'title'}">안녕하세요</span></li>
+        <li><span class="sub" th:class="${'title'}">안녕하세요</span></li>
+        <li><span class="sub" th:attrappend="class=${' title'}">안녕하세요</span></li>
+        <li><span class="sub" th:attrprepend="class=${' title '}">안녕하세요</span></li>
+        <li><span class="sub" th:classappend="${'title'}">안녕하세요</span></li>
+        <li>checked</li>
+        <li><input type="checkbox" name="aaa" th:checked="true"></li>
+        <li><input type="checkbox" name="aaa" th:checked="false"></li>
+        <li><input type="checkbox" name="aaa" th:checked="${10>1}"></li>
+    </ul>
 
     <h1>연산자</h1>
     <ul>
@@ -93,6 +239,27 @@
 <span th:text="${list}"></span>
 
 <h4>[[${list}]]</h4>
+
+<script th:inline="javascript">
+    let deptno = [[${dept.List[0].deptno}]] ;
+    let dname = [[${dept.List[0].dname}]] ;   // =  let dname = ACCOUNTING  ''이 없다면 변수로 인식하기 때문에 감싸주어 문자열이라고 표시해줌
+    let loc = [[${dept.List[0].loc}]] ;
+
+    // 객체 => JSPN형식으로 변환처리
+    let dept = '[[${dept}]] ';
+    let deptList = '[[${deptList}]]' ;
+
+    let deptObj = JSON.parse(dept) ;
+    let deptListObj = JSON.parse(deptList) ;
+
+    console.log('deptno',deptno);
+    console.log('dname',dname);
+    console.log('loc',loc);
+
+    console.log('deptObj',deptObj);
+    console.log('deptList',deptList);
+
+</script>
 
 </body>
 </html>
