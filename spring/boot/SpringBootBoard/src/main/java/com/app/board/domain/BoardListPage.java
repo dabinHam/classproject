@@ -44,12 +44,12 @@ public class BoardListPage {
         // 끝번호
         // Math.ceil : 올림
         // Math.lound : 반올림
-        this.endNum = (int)(Math.ceil((this.pageNum * 1.0) / 10))*10;
+        this.endNum = (int)(Math.ceil((this.pageNum * 1.0) / 7))*7;
         // 1 -> 1.0 / 10 => 0.1 => ceil : 가장 가까운 높은 정수값을 반환 1 * 10
         // 11 -> 11.0 / 10 => 1.1 => ceil : 가장 가까운 높은 정수값을 반환 2 * 10
 
         // 시작번호
-        this.startNum=this.endNum-9;
+        this.startNum=this.endNum-6;
 
         // 실제 마지막 값, 전체 페이지의 끝번호
         int realEndNum = (int)(Math.ceil((this.totalCount* 1.0) / this.countPerPage));
