@@ -30,7 +30,6 @@ public class BoardDeleteService {
                 delFile.delete();
             }
 
-
         }
 
 //        return boardMapper.deleteByBno(bno);

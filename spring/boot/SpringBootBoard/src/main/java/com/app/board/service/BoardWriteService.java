@@ -68,6 +68,8 @@ public class BoardWriteService {
             boardDTO.setPhoto(newFileName);
         }
 
+        int result = 0;
+
         try{
             // DB insert
             boardMapper.insert(boardDTO);
@@ -79,9 +81,7 @@ public class BoardWriteService {
                 }
             }
         }
-
-
-        return 0;
+        return result;
     }
 
 }

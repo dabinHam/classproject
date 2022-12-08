@@ -71,7 +71,7 @@ public class BoardEditService {
 
             // 1.새로운 파일이 저장되고 2.이전파일이 존재한다면 3.이전파일 삭제!
             String oldFileName = boardEditRequest.getOldFile();
-            if (newFileName !=null && boardEditRequest.getOldFile() != null && oldFileName.trim().isEmpty()){
+            if (newFileName !=null && oldFileName != null && !oldFileName.isEmpty()){
                 File delOldFile = new File(saveDir, oldFileName);// <-   지우고자하는 경로
                 if (delOldFile.exists()){
 

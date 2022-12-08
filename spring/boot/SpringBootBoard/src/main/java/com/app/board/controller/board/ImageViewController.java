@@ -28,9 +28,14 @@ public class ImageViewController {
         HttpStatus status = HttpStatus.NOT_FOUND;
 
         // 저장된 파일 경로 찾기
-        File savedFile = new File(new File("").getAbsolutePath(),"photo\\"+fileName);
+//        File savedFile = new File(new File("").getAbsolutePath(),"photo\\"+fileName); // mac의 경우 윈도우 환경이 다르기 때문에 아래와같이 적어줘야한다.
+        File savedFile = new File(new File("").getAbsolutePath(),"photo"+File.separator+fileName);
+
+        log.info("진입했다"+savedFile.getAbsolutePath());
 
         if (savedFile.exists()){
+
+            log.info("사진경로진입"+savedFile);
             //응답 처리
             InputStream imageStream = new FileInputStream(savedFile);
             imageByteArray = imageStream.readAllBytes();
