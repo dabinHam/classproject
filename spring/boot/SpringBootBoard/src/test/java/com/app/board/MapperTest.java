@@ -23,8 +23,10 @@ public class MapperTest {
         log.info("board List ::::::::::::::" + list1);*/
 
         // 1페이지 : 10개의 게시물 (1,10)
+/*
         List<BoardDTO> list1= boardMapper.selectList(30,10);
         log.info(list1);
+*/
 
 
     }

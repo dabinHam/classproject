@@ -16,7 +16,7 @@ public class BoardListPage {
     private int pageNum; // 현재페이지 번호
 
 
-    private List<BoardDTO> list; // 표현해야하는 게시물의 리스트
+    private List<BoardArticleDTO> list; // 표현해야하는 게시물의 리스트
 
 
     private int totalCount; // 전체 게시물의 개수 ('페이지당 출력 할 게시물의 개수'를 구하기 위하여)
@@ -31,7 +31,7 @@ public class BoardListPage {
 
     private boolean next; // 다음 버튼 출력 여부
 
-    public BoardListPage(int countPerPage, int pageNum, List<BoardDTO> list, int totalCount) {
+    public BoardListPage(int countPerPage, int pageNum, List<BoardArticleDTO> list, int totalCount) {
         this.countPerPage = countPerPage;
         this.pageNum = pageNum;
         this.list = list;
