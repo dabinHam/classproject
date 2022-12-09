@@ -63,25 +63,29 @@
                 댓글
             </div>
             <div class="card-body">
+
+            const btn_ enw bootstrip.Model)'
                 <!--댓글 작성 영역-->
 
+                <div class="p-3 border-bottom">
+                    <h4 class="title my-2">댓글 작성</h4>
+                    <div class="mb-3">
+                        <label class="form-label">작성자</label>
+                        <input type="text" class="form-control" id="replyer">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">내용</label>
+                        <textarea class="form-control" rows="3" id="reply"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <input type="submit" class="btn btn-success form-control" id="btn_reply" value="등록">
+                    </div>
+                </div>
 
                 <!--댓글 리스트 영역-->
                 <table class="table">
                     <tbody id="replyList">
-                    <tr>
-                        <td>작성자</td>
-                        <td>댓글 내용</td>
-                        <td>작성일</td>
-                        <td>수정 | 삭제</td>
-                    </tr>
-                    <tr>
-                        <td>작성자</td>
-                        <td>댓글 내용</td>
-                        <td>작성일</td>
-                        <td>수정 | 삭제</td>
-                    </tr>
-                    <tr>
+                    <tr class="text-center">
                         <td>작성자</td>
                         <td>댓글 내용</td>
                         <td>작성일</td>
@@ -97,13 +101,46 @@
     </div><!--//.card-body-->
 </div><!--//.card m-3-->
 
+
+<!-- Modal -->
+<div class="modal fade" id="replyEditModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">댓글 수정</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label">작성자</label>
+                    <input type="text" class="form-control" id="ereplyer" readonly>
+                    <input type="hidden" id="erno">
+                    <input type="hidden" id="ereplydate">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">내용</label>
+                    <textarea class="form-control" rows="3" id="ereply"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" id="btn_edit" class="btn btn-primary">수정</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
 <script>
     function deleteBoard(bno){
-
         if (confirm("삭제하시겠습니까?")){
-            location.href='/board/delete?bno='+bno
+        location.href='/board/delete?bno='+bno
         }
-
     }
 </script>
 
@@ -117,10 +154,29 @@
 </script>
 
 <script>
+
+    let replyList;
+    let editModal
+
     document.addEventListener('DOMContentLoaded',()=>{
 
-        let replyList = document.querySelector('#replyList')
+        // 댓글 리스트 출력 영역 캐스팅
+        replyList = document.querySelector('#replyList')
 
+        // 댓글 작성 버튼
+        const btn_reply = document.querySelector("#btn_reply")
+
+        editModal = new bootstrap.Modal('#replyEditModal')
+
+
+        // 버튼 이벤트 등록
+        btn_reply.addEventListener('click',insertReply);
+
+        // 페이지가 로드되면 리스트를 출력
+        setList();
+    })
+
+    function setList(){
         // 비동기통신 : 댓글 리스트 가져오기  경로는 변수처리
         axios.get('/reply/'+bno)
             .then(res =>{
@@ -128,11 +184,99 @@
                 console.log('response', res.data)
 
                 let list = res.data;
+
+                list.forEach((reply,index)=>{
+                    // 새로운 tr을 만들어서 replyIndex 영역에 추가
+                    const newTR = document.createElement('tr')
+                    let html = '<td class="col-2">'+reply.replyer+'</td>'
+                    html += '<td class="col">'+reply.reply+'</td>'
+                    html += '<td class="col-2">'+reply.replyDate+'</td>'
+                    html += '<td class="col-2">'+
+                        '<a href="javascript:showEditModal('+reply.rno+')" class="badge bg-warning text-decoration-none">수정</a>'+   /* badge :  작은버튼*/
+                        '<a href="javascript:deleteReply('+reply.rno+')" class="badge bg-danger text-decoration-none">삭제</a>'+
+                        '</td>'
+                    newTR.innerHTML=html
+                    newTR.setAttribute('class','fs-6 text-center')
+                    newTR.setAttribute('tr-index',reply.rno)    /*tr 마다 rno 값을 주고 delete할때 해당rno와 같은것을 찾아서 삭제 , 찾아서삭제하기 중요!!*/
+
+                    /*부모태그(tbody)에 자식태그(td) 추가*/
+                    replyList.appendChild(newTR);
+                })
             })
             .catch(err=>{
                 console.log((err))
             })
-    })
+
+    }
+
+    function insertReply(){
+        // 서버로 전송 할 payload(parameter,data)
+        const payload = {
+            bno : bno,
+            reply : document.querySelector("#reply").value,
+            replyer : document.querySelector("#replyer").value
+        }
+
+        console.log("payload",payload);
+
+        axios.post('/reply',payload)
+            .then(res => {
+                console.log('post->response',res.data)
+
+                const reply = res.data;
+
+                // 새로운 tr을 만들어서 replyIndex 영역에 추가
+                const newTR = document.createElement('tr')
+                let html = '<td class="col-2">'+reply.replyer+'</td>'
+                html += '<td class="col">'+reply.reply+'</td>'
+                html += '<td class="col-2">'+reply.replyDate+'</td>'
+                html += '<td class="col-2">'+
+                    '<a href="javascript:showEditModal('+reply.rno+')" class="badge bg-warning text-decoration-none">수정</a>'+   /* badge :  작은버튼*/
+                    '<a href="javascript:deleteReply('+reply.rno+')" class="badge bg-danger text-decoration-none">삭제</a>'+
+                    '</td>'
+                newTR.innerHTML=html
+                newTR.setAttribute('class','fs-6 text-center')
+                newTR.setAttribute('tr-index',reply.rno)    /*tr 마다 rno 값을 주고 delete할때 해당rno와 같은것을 찾아서 삭제 , 찾아서삭제하기 중요!!*/
+                const btn_reply = new bootstrip.Model;
+                /*부모태그(tbody)에 자식태그(td) 추가*/
+                replyList.appendChild(newTR);
+                reply : document.querySelector("#reply").value=''
+                replyer : document.querySelector("#replyer").value=''
+
+            })
+            .catch(err => console.log(err))
+    }
+
+    function deleteReply(rno){
+
+        if(!confirm('삭제하시겠습니까?')){
+            return;
+        }
+        console.log('rno >>>>',rno);
+
+        axios.delete('/reply/'+rno)
+            .then(res =>{
+                console.log('delete-response=> res,data')
+
+                if (res.data == 1){
+                    // 화면에서 해당 tr-index == rno와 같은 행을 삭제
+                    // 삭제대상 행
+                    const delTR = document.querySelector('tr[tr-index="'+rno+'"]')
+                    replyList.removeChild(delTR);
+                    alert('삭제되었습니다.')
+                } else{
+                    alert('삭제할 대상이 존재하지 않습니다.')
+                }
+            })
+
+            .catch(err=>console.log(err))
+    }
+
+    function showEditModal(rno){
+        editModal.show()
+    }
+
+
 </script>
 
 </body>
