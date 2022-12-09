@@ -22,4 +22,7 @@ public interface ReplyMapper {
     @Delete("delete form tbl_reply where rno=#{rno}")
     int deleteByRno(int rno);
 
+    @Update("update tbl_reply set bno=#{bno}, reply=#{reply}, replyer=#{replyer}, replyDate=#{replyDate}, updateDate=now() where rno=#{rno}")
+    int updateReply(ReplyDTO replyDTO);
+
 }

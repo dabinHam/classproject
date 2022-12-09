@@ -2,10 +2,7 @@ package com.app.board.controller.board;
 
 
 import com.app.board.domain.ReplyDTO;
-import com.app.board.service.ReplyDeleteService;
-import com.app.board.service.ReplyInsertSerivce;
-import com.app.board.service.ReplyListService;
-import com.app.board.service.ReplyReadService;
+import com.app.board.service.*;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -28,16 +25,22 @@ public class ReplyRestController {
 
     @Autowired
     private ReplyListService replyListService;
-
     @Autowired
     private ReplyInsertSerivce replyInsertSerivce;
-
     @Autowired
     private ReplyReadService replyReadService;
-
+    @Autowired
+    private ReplyEditService replyEditService;
     @Autowired
     private ReplyDeleteService replyDeleteService;
-    // get  /reply/{bno} => list
+
+
+
+
+
+    /*=============================================================================================*/
+
+    // get : /reply/{bno} => list
     @GetMapping(value = "/{bno}",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<ReplyDTO>> selectList(@PathVariable("bno") int bno){
 
@@ -47,7 +50,9 @@ public class ReplyRestController {
     }
 
 
-    // post /reply => reply  |  클라이언트로부터 JSON데이터를 받아서 DB에 insert  처음 받을시 rno가 없어서
+    /*=============================================================================================*/
+
+    // post : /reply => reply  |  클라이언트로부터 JSON데이터를 받아서 DB에 insert  처음 받을시 rno가 없어서
     @PostMapping
     public ResponseEntity<ReplyDTO> insertReply(@RequestBody ReplyDTO replyDTO){
 
@@ -62,8 +67,20 @@ public class ReplyRestController {
         return new ResponseEntity<>(replyReadService.selectByRno(replyDTO.getRno()), HttpStatus.OK);
     }
 
-    // put  /reply/{rno} => reply
-    // delete /reply/{rno} => 0 / 1, ok, success,fail
+    /*=============================================================================================*/
+
+    // put : /reply/{rno} => reply
+    @PutMapping("/{rno}")
+    public ResponseEntity<Integer> editReply(@RequestBody ReplyDTO replyDTO, @PathVariable("rno")int rno){
+        replyDTO.setRno(rno);
+        return new ResponseEntity<>(replyEditService.updateReply(replyDTO),HttpStatus.OK);
+    }
+
+
+
+    /*=============================================================================================*/
+
+    // delete : /reply/{rno} => 0 / 1, ok, success,fail
     @DeleteMapping("/{rno}")
     public ResponseEntity<Integer> delete(@PathVariable("rno")int rno){     /*처리완료 : 0 , 처리실패 : 1*/
         return new ResponseEntity<>(replyDeleteService.deleteByRno(rno), HttpStatus.OK);

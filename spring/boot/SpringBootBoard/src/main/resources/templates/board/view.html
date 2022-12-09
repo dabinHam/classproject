@@ -64,7 +64,6 @@
             </div>
             <div class="card-body">
 
-            const btn_ enw bootstrip.Model)'
                 <!--댓글 작성 영역-->
 
                 <div class="p-3 border-bottom">
@@ -102,33 +101,33 @@
 </div><!--//.card m-3-->
 
 
-<!-- Modal -->
-<div class="modal fade" id="replyEditModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel">댓글 수정</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="mb-3">
-                    <label class="form-label">작성자</label>
-                    <input type="text" class="form-control" id="ereplyer" readonly>
-                    <input type="hidden" id="erno">
-                    <input type="hidden" id="ereplydate">
+    <!-- Modal -->
+    <div class="modal fade" id="replyEditModal" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">댓글 수정</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="mb-3">
-                    <label class="form-label">내용</label>
-                    <textarea class="form-control" rows="3" id="ereply"></textarea>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">작성자</label>
+                        <input type="text" class="form-control" id="ereplyer" readonly>
+                        <input type="hidden" id="erno">
+                        <input type="hidden" id="ereplydate">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">내용</label>
+                        <textarea class="form-control" placeholder="댓글을 남겨보세요." rows="1" id="ereply"></textarea>
+                    </div>
                 </div>
-            </div>
-            <div class="modal-footer">
+                <div class="modal-footer">
 
-                <button type="button" id="btn_edit" class="btn btn-primary">수정</button>
+                    <button type="button" id="btn_edit" class="btn btn-primary">수정</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
 
@@ -166,11 +165,15 @@
         // 댓글 작성 버튼
         const btn_reply = document.querySelector("#btn_reply")
 
+        // 댓글 수정 버튼
+        const btn_edit = document.querySelector('#btn_edit')
+
         editModal = new bootstrap.Modal('#replyEditModal')
 
 
         // 버튼 이벤트 등록
         btn_reply.addEventListener('click',insertReply);
+        btn_edit.addEventListener('click',editReply);
 
         // 페이지가 로드되면 리스트를 출력
         setList();
@@ -274,6 +277,49 @@
 
     function showEditModal(rno){
         editModal.show()
+
+        // const editTD = document.querySelectorAll('tr[tr-index="14"]>td') //=> rno 로 구별할 수 있기 때문에 숫자 안넣고 rno 넣어주기
+        const editTD = document.querySelectorAll('tr[tr-index="'+rno+'"]>td');
+
+        // editTD[0].textContent='변경된 데이터'
+
+        console.log(editTD[0].textContent) // 작성자
+        console.log(editTD[1].textContent) // 댓글내용
+        console.log(editTD[2].textContent) // 등록일
+
+
+        document.querySelector('#erno').value=rno;
+        document.querySelector('#ereplyer').value=editTD[0].textContent
+        document.querySelector('#ereply').value=editTD[1].textContent
+        document.querySelector('#ereplydate').value=editTD[2].textContent
+    }
+
+    function editReply(rno){
+        // post와 같음
+        // 서버로 전송 할 payload(parameter,data)
+        // put => 전체 데이터의 변경, 모든 데이터를 서버로 전송, 값이 없는 경우 기본값으로 저장
+        const payload = {
+            bno : bno,
+            rno : document.querySelector('#erno').value,
+            reply : document.querySelector("#ereply").value,
+            replyer : document.querySelector("#ereplyer").value,
+            replyDate : document.querySelector('#ereplydate').value
+        }
+
+        console.log(payload)
+
+        axios.put('/reply/'+payload.rno, payload)
+            .then(res => {
+                console.log('put -> response',res.data)
+
+                const editTD = document.querySelector('tr[tr-index="'+payload.rno+'"]>td')
+                editTD[1].textContent=payload.reply;
+                editModal.hide();
+            })
+            .catch(err => console.log(err))
+
+
+
     }
 
 
