@@ -29,6 +29,6 @@ public interface BoardMapper {
     @Delete("delete from tbl_board where bno=#{bno}") // parameter가 하나밖에 없기때문에 이름을 뭘로 적어도 상관없다.
     Integer deleteByBno(int bno);
 
-    @Update("update tbl_board set title=#{title}, content=#{content}, writer=#{writer}, photo=#{photo}, updatedate=now() where bno=#{bno}")
+    @Update("update tbl_board set title=#{title}, content=#{content}, writer=#{writer}, photo=#{photo}, updatedate=now() where bno=#{bno}") // sql문은 대소문자 상관없음.
     Integer update(BoardDTO boardDTO) throws SQLException;
 }
