@@ -19,7 +19,7 @@ public interface ReplyMapper {
     @Options(useGeneratedKeys = true, keyProperty = "rno",keyColumn = "rno") // 자동생성된 키값 사용
     int insertReply(ReplyDTO replyDTO);
 
-    @Delete("delete form tbl_reply where rno=#{rno}")
+    @Delete("delete from tbl_reply where rno=#{rno}")
     int deleteByRno(int rno);
 
     @Update("update tbl_reply set bno=#{bno}, reply=#{reply}, replyer=#{replyer}, replyDate=#{replyDate}, updateDate=now() where rno=#{rno}")
