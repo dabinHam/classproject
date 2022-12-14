@@ -71,18 +71,18 @@
             // $('body').load('/data.html')    // 데이터 간단하게 가져오기의 첫번째 예제와 같은 것.
             // $('div').load('/data.html')    //특정 영역에 캐스팅하여 로드함
 
-            // $.ajax({
-            //     url:'/data.xml',
-            //     success:function (data){
-            //         //find 메소드를 사용하기 위해선 jquery로 만들어줘야함.
-            //         $(data).find('product').each(function (){
-            //             let name = $(this).find('name').text();
-            //             let price = $(this).find('price').text();
-            //
-            //             $('div').append('<h3>'+name+' : '+price+'</h3>');
-            //         })
-            //     }
-            // })
+            /*$.ajax({
+                url:'/data.xml',
+                success:function (data){
+                    //find 메소드를 사용하기 위해선 jquery로 만들어줘야함.
+                    $(data).find('product').each(function (){
+                        let name = $(this).find('name').text();
+                        let price = $(this).find('price').text();
+
+                        $('div').append('<h3>'+name+' : '+price+'</h3>');
+                    })
+                }
+            })*/
             
             
             $('#myForm').submit(function () {
