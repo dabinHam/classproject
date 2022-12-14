@@ -2,7 +2,7 @@
     let replyList;
     let editModal;
     /* jquery 시작*/
-    $().ready(function (){
+$().ready(function (){
     editModal = new bootstrap.Modal('#replyEditModal')
     $('#btn_reply').click(function (){insertReply()})   // 등록
     $('#btn_edit').click(function (){editReply()})      // 수정
@@ -123,8 +123,10 @@
     data: JSON.stringify(payload),
     dataType: "json",
     contentType: "application/json",
-    success: function (){
-    $('tr[tr-index="'+payload.rno+'"]>td')[1].textContent = payload.reply
+    success: function (data){
+        const editTD = $('tr[tr-index="'+payload.rno+'"]>td')
+        $(editTD).eq(1).text();
+
     editModal.hide();
 }
 
