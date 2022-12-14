@@ -166,11 +166,10 @@
                         '<td>'+reply.replyer+'</td>'+
                         '<td>'+reply.reply+'</td>'+
                         '<td>'+reply.replydate+'</td>'+
-                        '<td>'+'<a href="javascript:showEditModal('+reply.rno+')">수정</a>'+'</td>'+
-                        '<td>'+'<a href="javascript:deleteReply('+reply.rno+')">삭제</a>'+'</td>'
+                        '<td>'+'<a class="badge bg-warning text-decoration-none" href="javascript:showEditModal('+reply.rno+')">수정</a> <a class="badge bg-danger text-decoration-none" href="javascript:deleteReply('+reply.rno+')">삭제</a>'+'</td>'
                         // '</tr>'
 
-                    let newTR = $('<tr></tr>').attr('tr-index', reply.rno).html(newTD)
+                    let newTR = $('<tr></tr>').attr('class','text-center fs-6').attr('tr-index', reply.rno).html(newTD)
 
                     $('#replyList').append(newTR)
                 })
@@ -306,7 +305,7 @@
             contentType: "application/json",
             success: function (){
                 $('tr[tr-index="'+payload.rno+'"]>td')[1].textContent = payload.reply
-                editModal.hide()
+                editModal.hide();
             }
 
         })
