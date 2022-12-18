@@ -76,7 +76,7 @@ public class DeptRepositoryTest {
                     ? , ? , ? , ?
                 )*/
         List<Integer> nos = Arrays.asList(10, 20, 30, 40);
-        List<Dept> list3 = deptRepository.findAllById(nos); // where in 연산
+        List<Dept> list3 = deptRepository.findAllById(nos); // where in 연산 : 많이 사용되는 편
         for(Dept dept : list3){
             log.info(dept);
         }
