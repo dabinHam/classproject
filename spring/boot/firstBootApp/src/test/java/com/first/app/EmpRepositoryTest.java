@@ -3,6 +3,7 @@ package com.first.app;
 import com.first.app.entity.Emp;
 import com.first.app.entity.EmpRepository;
 import lombok.extern.log4j.Log4j2;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -10,6 +11,7 @@ import java.time.LocalDate;
 
 @SpringBootTest // 1. @SpringBootTest 선언
 @Log4j2
+
 public class EmpRepositoryTest {
 
     @Autowired
@@ -17,6 +19,7 @@ public class EmpRepositoryTest {
 
     //save 가 잘 되는지 확인
 
+    @Test
     public void empRepositorySaveTest(){
 
        Emp emp = empRepository.save(Emp.builder()
