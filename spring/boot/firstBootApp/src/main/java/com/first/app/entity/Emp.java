@@ -43,9 +43,13 @@ public class Emp {
     @Column
     private Double comm;
 
-    @Column
-    private Integer deptno;
-
+    /*@Column
+    private Integer deptno;*/   // <- 외래키 Column (sql 입장)
+    ////////////////////////////
+    @JoinColumn(name = "deptno")    //  dept 안에있는 deptno를 가져오겠다.
+    @ManyToOne  //  ManyToOne : 연관관계에대한 표현 (객체 입장) Many(=emp) | one(=dept)
+    private Dept dept;
+    // 사원정보 + 부서정보를 Join해 줌
 
 
 }

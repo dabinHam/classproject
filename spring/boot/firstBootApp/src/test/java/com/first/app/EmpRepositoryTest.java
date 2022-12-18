@@ -1,5 +1,6 @@
 package com.first.app;
 
+import com.first.app.entity.Dept;
 import com.first.app.entity.Emp;
 import com.first.app.entity.EmpRepository;
 import lombok.extern.log4j.Log4j2;
@@ -9,6 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -26,6 +28,8 @@ public class EmpRepositoryTest {
     @Test
     public void empRepositorySaveTest(){
 
+        Dept dept = Dept.builder().deptno(40).build();
+
        Emp emp = empRepository.save(Emp.builder()
                        /*.empno()   // empno는 들어가지않음! 주의!*/
                        .ename("SON")
@@ -34,7 +38,8 @@ public class EmpRepositoryTest {
                        .hiredate(LocalDate.now())
                        .sal(4000d)  // Double형이기 때문에 4000으로만 넣으면 에러 발생, d 붙혀주었음.
                        .comm(null)
-                       .deptno(30)
+                       /*.deptno(30)*/
+                       .dept(dept)
                         .build());
 
         log.info("emp entity insert >>>>>>>>" + emp);   // emp가 0 이라는걸 확인하기 위함.
@@ -56,7 +61,8 @@ public class EmpRepositoryTest {
     public void empPagingTest(){
         // page는 0부터 시작!! | 화면에 보이는 1페이지 = page 0
 //        Pageable pageable = PageRequest.of(0,5); //  Pageable : org.springframework.data.domain 로 선택 해주기
-        Pageable pageable = PageRequest.of(3,5); // 4페이지
+//        Pageable pageable = PageRequest.of(3,5, Sort.by("empno").descending()); // 4페이지 // descending : 낮은번호가 맨 뒤로
+        Pageable pageable = PageRequest.of(3,5, Sort.by("hiredate").descending()); // 4페이지 // descending : 낮은번호가 맨 뒤로
 
         Page<Emp> result = empRepository.findAll(pageable); //  pageable로 하게되면 page type으로 반환.
 
@@ -67,6 +73,23 @@ public class EmpRepositoryTest {
         log.info("result >>>>현재 요청 페이지 번호 " + result.getNumber());
         log.info("result >>>>페이지당 표현할 항목의 개수 " + result.getSize());
         log.info("result >>>>현재 페이지에 출력된 항목의 개수 " + result.getNumberOfElements());
+
+    }
+
+    @Test
+    public void empJoinDeptTest(){  // @ManyToOne  ,  @JoinColumn
+
+        List<Emp> list1 = empRepository.findEmpDept();
+        for (Emp emp : list1){
+            log.info(emp);
+        }
+
+        log.info("############################ ############################ ############################");
+
+        List<Emp> list2 = empRepository.findEmpWithDept();
+        for (Emp emp : list2){
+            log.info(emp);
+        }
 
     }
 
