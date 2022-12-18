@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @SpringBootTest // 1. @SpringBootTest 선언
 @Log4j2
@@ -36,7 +37,17 @@ public class EmpRepositoryTest {
         log.info("emp entity insert >>>>>>>>" + emp);   // emp가 0 이라는걸 확인하기 위함.
     }
 
+    @Test
+    public void empListTest(){  // empListTest : 페이징 처리를 위하여 결과 먼저 확인해보기
 
+        List<Emp> list =  empRepository.findAll();    // findAll() : List Type으로 가져온다.
+
+        log.info("############################ ############################ ############################");
+        for(Emp emp : list){
+            log.info(emp);
+        }
+
+    }
 
 
 }
