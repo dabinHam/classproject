@@ -1,4 +1,4 @@
-package com.app.board.service;
+package com.app.board.service.reply;
 
 import com.app.board.domain.ReplyDTO;
 import com.app.board.mapper.ReplyMapper;
