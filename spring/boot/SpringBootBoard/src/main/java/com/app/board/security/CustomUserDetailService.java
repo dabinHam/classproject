@@ -24,27 +24,30 @@ public class CustomUserDetailService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-        log.info(" >>>>>>>>>>   loadUserByUsername => " + username);
+        log.info(" >>>>> loadUserByUsername => " + username);
 
         Optional<BoardMember> result = boardMemberRepository.findByUserid(username);
 
         if(result.isEmpty()){
-            throw new UsernameNotFoundException("Check User Email");
+            throw new UsernameNotFoundException("회원의 아이디 또는 비밀번호 확인");
         }
 
+        // 회원의 정보, 권한 정보 => CustomUser 인스턴스 생성 반환
         BoardMember boardMember = result.get();
-        log.info(">>>>>>>>>>>>>>>  member => " + boardMember);
 
+        // 권한 데이터 처리
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
-        authorities.add(new SimpleGrantedAuthority("ROLE_"+boardMember.getRole()));
+        authorities.add(
+                new SimpleGrantedAuthority("ROLE_" + boardMember.getRole()));
 
-        /*for(MemberRole memberRole : member.getRoleSet()){
-            // ROLE_ADMIN ROLE_USER
-            authorities.add(new SimpleGrantedAuthority("ROLE_"+memberRole.name()));
-        }*/
+        CustomUser user = new CustomUser(
+                boardMember.getUserid(),
+                boardMember.getPassword(),
+                authorities,
+                boardMember
+        );
 
-        CustomUser customUser = new CustomUser(boardMember.getUserid(), boardMember.getPassword(),authorities, boardMember.toMemberLoginInfo());
-
-        return customUser;
+        return user;
     }
+
 }

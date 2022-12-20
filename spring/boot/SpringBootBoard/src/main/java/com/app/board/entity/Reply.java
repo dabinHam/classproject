@@ -29,6 +29,7 @@ public class Reply {
 
     /*@Column
     private String replyer;*/
+
     @ManyToOne
     @JoinColumn(name = "replyer")
     private BoardMember replyer;

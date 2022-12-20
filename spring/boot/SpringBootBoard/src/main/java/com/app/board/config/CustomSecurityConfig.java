@@ -1,7 +1,5 @@
 package com.app.board.config;
 
-import com.app.board.security.Custom403Handler;
-import com.app.board.security.CustomLoginSuccessHandler;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
@@ -56,23 +54,5 @@ public class CustomSecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-    @Bean
-    public AuthenticationSuccessHandler successHandler() {
-        return new CustomLoginSuccessHandler();
-    }
 
-    public AccessDeniedHandler accessDeniedHandler() {
-        return new Custom403Handler();
-    }
-
-
-
-    @Bean
-    public WebSecurityCustomizer webSecurityCustomizer() {
-
-        log.info("------------web configure-------------------");
-
-        return (web) -> web.ignoring().requestMatchers(PathRequest.toStaticResources().atCommonLocations());
-
-    }
 }

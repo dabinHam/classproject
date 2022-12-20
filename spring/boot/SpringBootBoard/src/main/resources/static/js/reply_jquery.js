@@ -91,7 +91,8 @@ function insertReply(){
             $('#replyList').append(newTR)
 
             $("#reply").val('')
-            //$("#replyer").val('')
+            //$("#replyer").val('')     // 기존 : 댓글 작성시 작성자(replyer)값 입력 후 등록하면 "데이터 등록 + 작성했던 값은 사라짐."
+            // 주석처리 후 : 로그인을 하고 댓글을 작성함으로써 replyer의 값이 사라지지않고 유지되어야 하는데 주석처리를 하지않고 하게되면 처음 작성시엔 정상적으로 등록이 되지만 두번째부턴 에러발생 주석처리해주기
         },
         error : function (request, httpStatus, error) {
             console.log(request)
