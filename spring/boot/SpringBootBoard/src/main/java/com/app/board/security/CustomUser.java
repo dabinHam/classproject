@@ -1,6 +1,5 @@
 package com.app.board.security;
 
-import com.app.board.domain.MemberLoginInfo;
 import com.app.board.entity.BoardMember;
 import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
@@ -10,8 +9,6 @@ import java.util.Collection;
 
 @Getter
 public class CustomUser  extends User {
-
-//    private MemberLoginInfo memberLoginInfo;
 
     private BoardMember boardMember; // 추가적인 회원의 정보
 

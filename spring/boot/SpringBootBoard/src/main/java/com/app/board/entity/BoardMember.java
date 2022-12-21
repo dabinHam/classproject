@@ -1,6 +1,5 @@
 package com.app.board.entity;
 
-import com.app.board.domain.MemberLoginInfo;
 import lombok.*;
 
 import javax.persistence.*;
@@ -37,12 +36,4 @@ public class BoardMember {
 
     @Column
     private LocalDateTime editdate;
-
-    public MemberLoginInfo toMemberLoginInfo(){
-        return MemberLoginInfo.builder()
-                .idx(idx)
-                .userid(userid)
-                .username(username)
-                .build();
-    }
 }

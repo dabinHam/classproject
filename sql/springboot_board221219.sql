@@ -1,4 +1,4 @@
-CREATE TABLE `tbl_board` (
+CREATE TABLE `tbl_board2` (
   `bno` int NOT NULL AUTO_INCREMENT,
   `title` varchar(200) COLLATE utf8mb3_bin NOT NULL,
   `content` varchar(2000) COLLATE utf8mb3_bin NOT NULL,
@@ -9,7 +9,7 @@ CREATE TABLE `tbl_board` (
   PRIMARY KEY (`bno`)
 );
 
-CREATE TABLE `tbl_reply` (
+CREATE TABLE project.`tbl_reply` (
   `rno` int NOT NULL AUTO_INCREMENT,
   `bno` int NOT NULL,
   `reply` varchar(1000) COLLATE utf8mb3_bin NOT NULL,
@@ -40,3 +40,21 @@ CREATE TABLE `boardmember` (
 -- 데이터 한번에 지우기 
 delete from tbl_board where bno>0;
 delete from tbl_reply where rno>0;
+
+-- 데이터 입력하기
+INSERT INTO `project`.`tbl_board`
+(`title`,`content`,`writer`)
+VALUES('게시글제목','내용테스트','duobin');
+
+insert into tbl_board select * from tbl_board;
+
+-- 게시물 총 개수 
+select count(*) from tbl_board2;
+
+-- 오름차순 정리
+select * from tbl_board2 order by bno desc;
+
+-- 한페이지당 출력할 게시물 갯수 정하기 limit
+select * from tbl_board2 order by bno desc limit 50,10;
+
+
