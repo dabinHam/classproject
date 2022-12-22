@@ -20,7 +20,8 @@
     <div class="card-body">
             <form method="post" enctype="multipart/form-data">
 
-
+                <input type="hidden" name="bno" th:value="${board.bno}">
+                <input type="hidden" name="currPageNum" th:value="${currPageNum}">
 
                 <div class="mb-3">
                     <label for="title" class="form-label">제목</label>
@@ -35,6 +36,7 @@
                     <textarea class="form-control" id="content" name="content" rows="3"></textarea>
                 </div>
                 <div class="mb-3">
+                    <input type="hidden" name="oldFile" th:value="${board.photo}">
                     <label for="formFile" class="form-label">사진</label>
                     <input class="form-control" type="file" id="formFile" name="formFile">
                 </div>
