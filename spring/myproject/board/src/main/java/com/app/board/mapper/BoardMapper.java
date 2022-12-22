@@ -25,7 +25,7 @@ public interface BoardMapper {
     @Select("select count(*) from tbl_board2")
     Integer totalCount();
 
-    /*// 게시글 하나의 정보 읽기
+    // 게시글 하나의 정보 읽기
     @Select("select * from tbl_board2 where bno=#{no}")
     BoardDTO selectByBno(int bno);
 
@@ -39,5 +39,5 @@ public interface BoardMapper {
 
     // 게시글 수정
     @Update("update tbl_board2 set title=#{title}, content=#{content}, writer=#{writer}, photo=#{photo}, updatedate=now() where bno=#{bno}") // sql문은 대소문자 상관없음.
-    Integer update(BoardDTO boardDTO) throws SQLException;*/
+    Integer update(BoardDTO boardDTO) throws SQLException;
 }
