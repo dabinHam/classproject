@@ -22,7 +22,7 @@
         <div th:text="${boardView}"></div>
         <div th:text="${currentPageNum}"></div>
 
-<!--        <table class="table border-top-1">
+        <table class="table border-top-1">
             <tr>
                 <td class="col-2 text-center bg-light">제목</td>
                 <td th:text="${boardView.title}"></td>
@@ -34,9 +34,10 @@
             <tr>
                 <td class="col-2 text-center bg-light">첨부사진</td>
                 <td>
-                    <th:block th:if="${boardView.photo != null}">
+                    <img th:src="@{/upload/photo/{name}(name=${boardView.photo})}" alt="첨부사진" width="300">
+                    <!--<th:block th:if="${boardView.photo != null}">
                         <img th:src="@{/upload/photo/{name}(name=${boardView.photo})}" alt="첨부사진" width="300">
-                    </th:block>
+                    </th:block>-->
                 </td>
             </tr>
             <tr>
@@ -49,19 +50,12 @@
             </tr>
         </table>
 
-        &lt;!&ndash;        <div class="text-end">
-                    <a class="btn btn-warning" th:href="@{/board/edit(bno=${boardView.bno}, p=${currentPageNum})}">수정</a>
-                    &lt;!&ndash;            <a class="btn btn-danger" th:href="@{/board/delete(bno=${boardView.bno})}">삭제</a>&ndash;&gt;
-                    <a class="btn btn-danger" th:onclick="'deleteBoard('+${boardView.bno}+')'">삭제</a>
-                    <a class="btn btn-primary" th:href="@{/board/list(p=${currentPageNum})}">리스트</a>
-                </div>&ndash;&gt;
         <div class="text-end">
-            <th:block th:if="${#authentication.principal.memberLoginInfo.idx} == ${boardView.writer.idx}">
-                <a class="btn btn-warning" th:href="@{/board/edit(bno=${boardView.bno}, p=${currentPageNum})}">수정</a>
-                <a class="btn btn-danger" th:onclick="'deleteBoard('+${boardView.bno}+')'">삭제</a>
-            </th:block>
+            <a class="btn btn-warning" th:href="@{/board/edit(bno=${boardView.bno}, p=${currentPageNum})}">수정</a>
+            <!--            <a class="btn btn-danger" th:href="@{/board/delete(bno=${boardView.bno})}">삭제</a>-->
+            <a class="btn btn-danger" th:onclick="'deleteBoard('+${boardView.bno}+')'">삭제</a>
             <a class="btn btn-primary" th:href="@{/board/list(p=${currentPageNum})}">리스트</a>
-        </div>-->
+        </div>
 
 
     </div><!--//.card-body-->

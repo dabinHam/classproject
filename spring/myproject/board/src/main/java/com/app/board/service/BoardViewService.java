@@ -17,4 +17,6 @@ public class BoardViewService {
         return boardMapper.selectByBno(bno);
     }
 
+
+
 }
