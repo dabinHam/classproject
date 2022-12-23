@@ -10,7 +10,8 @@ Java SpringBoot - mini project
 	- CSS3
 	- JavaScript
 - JAVA
-	- Spring Boot
+- Spring Boot
+- Thymeleaf
 - DBMS - Mysql
 - Mybatis
 
