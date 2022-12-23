@@ -27,12 +27,13 @@ public class BoardEditController {
     public void editForm(@RequestParam("bno")int bno, @RequestParam("p")int p, Model model){
 
         model.addAttribute("board",boardViewService.selectBoardDTO(bno));
-        model.addAttribute("currPageNum",p); // post에서 redirect할때 함께 넘기기
+        model.addAttribute("currPageNum", p); // post에서 redirect할때 함께 넘기기
+        log.info(boardViewService);
     }
 
-    @PostMapping
+/*    @PostMapping
     public String edit(){
         return null;
-    }
+    }*/
 
 }

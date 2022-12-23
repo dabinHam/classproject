@@ -17,10 +17,8 @@ public class BoardViewController {
     private BoardViewService boardViewService;
 
     @GetMapping("/board/view")
-    public void readArticle(
-            @RequestParam("bno") int bno, @RequestParam("p") int p, Model model
-            ){
-        model.addAttribute("currentPage",p);
+    public void readArticle(@RequestParam("bno") int bno, @RequestParam("p") int p, Model model){
+        model.addAttribute("currPageNum",p);
         model.addAttribute("boardView", boardViewService.selectBoardDTO(bno));
     }
 }
