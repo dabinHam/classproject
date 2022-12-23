@@ -4,6 +4,7 @@ package com.app.board.service;
 import com.app.board.domain.BoardDTO;
 import com.app.board.domain.BoardWriteRequest;
 import com.app.board.mapper.BoardMapper;
+import com.app.board.util.SaveUtil;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Map;
 import java.util.UUID;
 
 @Service
@@ -21,15 +23,18 @@ public class BoardWriteService {
     @Autowired
     private BoardMapper boardMapper;
 
+    @Autowired
+    private SaveUtil saveUtil;
+
     // 파일이 저장되는지 먼저 확인
     public int write(BoardWriteRequest boardWriteRequest){
 
         MultipartFile file = boardWriteRequest.getFormFile();
 
-        File saveDir = null;
+        /*File saveDir = null;
         String newFileName = null;
 
-        /* 파일 존재 여부확인 */
+        *//* 파일 존재 여부확인 *//*
         if (file != null && !file.isEmpty() && file.getSize()>0){
 
             String absolutePath = new File("").getAbsolutePath(); // 기본경로
@@ -57,8 +62,18 @@ public class BoardWriteService {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-        }
+        }*/
 
+
+        /*-------------------------------------------------------*/
+        Map<String,Object> saveResult = saveUtil.saveFile(file);
+
+        // object인데 우린 문자열로 썻으니까 형변환 시켜줘야함.
+        String newFileName = (String) saveResult.get("newFileName");
+        File saveDir = (File) saveResult.get("saveDir");
+
+
+        /*-------------------------------------------------------*/
         BoardDTO boardDTO = boardWriteRequest.toBoardDTO();
         if (newFileName != null){
             boardDTO.setPhoto(newFileName);

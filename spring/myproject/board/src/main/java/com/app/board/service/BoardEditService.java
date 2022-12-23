@@ -3,6 +3,7 @@ package com.app.board.service;
 import com.app.board.domain.BoardDTO;
 import com.app.board.domain.BoardEditRequest;
 import com.app.board.mapper.BoardMapper;
+import com.app.board.util.SaveUtil;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,6 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Map;
 import java.util.UUID;
 
 @Service
@@ -18,6 +20,9 @@ import java.util.UUID;
 public class BoardEditService {
     @Autowired
     private BoardMapper boardMapper;
+
+    @Autowired
+    private SaveUtil saveUtil;
 
     public int edit(BoardEditRequest boardEditRequest) {
         /*  == 수정 파일저장 순서 (중요!)
@@ -28,7 +33,7 @@ public class BoardEditService {
          * */
         MultipartFile file = boardEditRequest.getFormFile();
 
-        File saveDir = null;
+        /*File saveDir = null;
         String newFileName = null;
 
         if (file != null && !file.isEmpty()) {
@@ -56,7 +61,18 @@ public class BoardEditService {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-        }
+        }*/
+
+        /*-------------------------------------------------------*/
+        Map<String,Object> saveResult = saveUtil.saveFile(file);
+
+        // object인데 우린 문자열로 썻으니까 형변환 시켜줘야함.
+        String newFileName = (String) saveResult.get("newFileName");
+        File saveDir = (File) saveResult.get("saveDir");
+
+
+        /*-------------------------------------------------------*/
+
 
 
         // db update
