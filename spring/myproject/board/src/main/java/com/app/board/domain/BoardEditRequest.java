@@ -22,6 +22,12 @@ public class BoardEditRequest {
 
     public BoardDTO toBoardDTO(){
 
-        return BoardDTO.builder().build();
+        return BoardDTO.builder()
+                .bno(bno)
+                .writer(writer)
+                .title(title)
+                .content(content)
+                .photo(oldFile)
+                .build();
     }
 }
