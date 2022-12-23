@@ -22,7 +22,7 @@ public class BoardDeleteService {
         // 삭제 결과 확인
         int result = boardMapper.deleteByBno(bno);
 
-        // 해당
+        // 해당 게시물이 DB에서 삭제되고 , 해당게시물의 사진이름을 가지고 있다면  -> 파일삭제
         if(result>0 && boardDTO.getPhoto()!=null){
 
             File delFile = new File(new File("").getAbsolutePath(),"photo"+File.separator+boardDTO.getPhoto());
@@ -32,7 +32,6 @@ public class BoardDeleteService {
 
         }
 
-//        return boardMapper.deleteByBno(bno);
         return result;
     }
 }
