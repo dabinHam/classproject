@@ -46,7 +46,7 @@ INSERT INTO `project`.`tbl_board`
 (`title`,`content`,`writer`)
 VALUES('게시글제목','내용테스트','duobin');
 
-insert into tbl_board select * from tbl_board;
+insert into tbl_board2 select * from tbl_board2;
 
 -- 게시물 총 개수 
 select count(*) from tbl_board2;
@@ -55,6 +55,13 @@ select count(*) from tbl_board2;
 select * from tbl_board2 order by bno desc;
 
 -- 한페이지당 출력할 게시물 갯수 정하기 limit
-select * from tbl_board2 order by bno desc limit 50,10;
+select * from tbl_board2 order by bno desc limit 70,10;	-- 맨 뒷페이지 
+
+-- 게시글 삭제
+delete from tbl_board2 where bno=1;
+
+-- 게시글 수정
+update tbl_board2 set title='tet', content='tet', writer='tet', photo=null, updatedate=now() where bno=4
+
 
 

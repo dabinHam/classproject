@@ -13,7 +13,14 @@ public class BoardDeleteService {
     private BoardMapper boardMapper;
 
     public int delete(int bno){
-        return boardMapper.deleteByBno(bno);
+
+        int result = boardMapper.deleteByBno(bno);
+
+        if(result>0){
+            
+        }
+
+        return result;
     }
 
 

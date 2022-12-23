@@ -40,6 +40,8 @@ public class BoardEditController {
         redirectAttributes.addAttribute("bno",boardEditRequest.getBno());
         redirectAttributes.addAttribute("p",boardEditRequest.getCurrPageNum());
 
+        boardEditService.edit(boardEditRequest);
+
         return "redirect:/board/view";
     }
 

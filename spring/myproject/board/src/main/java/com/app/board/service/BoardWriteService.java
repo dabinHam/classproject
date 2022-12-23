@@ -68,7 +68,7 @@ public class BoardWriteService {
 
         try{
             // DB insert
-            boardMapper.insert(boardDTO);
+            result = boardMapper.insert(boardDTO);
         }catch (SQLException e){
             if (newFileName!=null){
                 File delFile = new File(saveDir,newFileName);
