@@ -11,7 +11,7 @@ Java SpringBoot - mini project
 	- JavaScript
 - JAVA
 	- Spring Boot
-- DMBS - Mysql
+- DBMS - Mysql
 - Mybatis
 
 ## 프로젝트 구조
@@ -23,4 +23,3 @@ CRUD 기능이 있는 게시판, 구조는 아래와 같습니다.
 3. 게시글 수정
 4. 게시글 삭제
 
-### 프로젝트 미리보기
