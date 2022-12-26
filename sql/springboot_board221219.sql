@@ -38,7 +38,7 @@ CREATE TABLE `boardmember` (
 -- role : text로 USER or ADMIN 으로 경로를 만들어놓고 처리할 예정 
 
 -- 데이터 한번에 지우기 
-delete from tbl_board where bno>0;
+delete from tbl_board2 where bno>0;
 delete from tbl_reply where rno>0;
 
 -- 데이터 입력하기

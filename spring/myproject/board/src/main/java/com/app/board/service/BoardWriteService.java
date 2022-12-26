@@ -34,7 +34,7 @@ public class BoardWriteService {
         /*File saveDir = null;
         String newFileName = null;
 
-        *//* 파일 존재 여부확인 *//*
+         // == 파일 존재 여부확인
         if (file != null && !file.isEmpty() && file.getSize()>0){
 
             String absolutePath = new File("").getAbsolutePath(); // 기본경로
@@ -65,6 +65,7 @@ public class BoardWriteService {
         }*/
 
 
+        // == util class 생성하여 처리
         /*-------------------------------------------------------*/
         Map<String,Object> saveResult = saveUtil.saveFile(file);
 
