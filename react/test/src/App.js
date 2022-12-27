@@ -8,13 +8,30 @@ import Accommodate from './components/Acommodate';
 import Toggle from './components/Toggle';
 import MyButton from './components/MyButton';
 import ConfirmButton from './components/ConfirmButton';
+import Greeting from './components/Greeting';
+import LoginControl from './LoginControl';
 
 
 function App() {
   return (
-    <ConfirmButton/>
+    <LoginControl/>
   );
 }
+
+
+/* // 상위컴포넌트에서 하위컴포넌트로 상태,데이터 공유
+function App() {
+  return (
+    // <Greeting isLogin={false}/>  // 회원가입을 해주세요!
+    <Greeting isLogin={true}/>    // 다시 오셨군요 !
+  );
+} */
+
+/* function App() {
+  return (
+    <ConfirmButton/>
+  );
+} */
 
 /* function App() {
   return (
