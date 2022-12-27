@@ -13,6 +13,8 @@ import LoginControl from './LoginControl';
 import MailBox from './components/MailBox';
 import UserStatus from './components/UserStatus';
 import WarnningBanner from './WarnningBanner';
+import ToolBar from './components/ToolBar';
+import MainPage from './MainPage';
 
 /* function App() {
   return (
@@ -22,10 +24,16 @@ import WarnningBanner from './WarnningBanner';
 
 function App() {
   return (
+    <MainPage/>
+  );
+}
+
+/* function App() {
+  return (
     // <WarnningBanner warning={false}/>  // 화면이 출력되지 않음.
     <WarnningBanner warning={true}/>  // 경고 !!!!
   );
-}
+} */
 
 /* function App() {
   return (
