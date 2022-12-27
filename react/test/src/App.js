@@ -11,7 +11,7 @@ import ConfirmButton from './components/ConfirmButton';
 import Greeting from './components/Greeting';
 import LoginControl from './LoginControl';
 import MailBox from './components/MailBox';
-
+import UserStatus from './components/UserStatus';
 
 /* function App() {
   return (
@@ -19,13 +19,19 @@ import MailBox from './components/MailBox';
   );
 } */
 
-let list = [{},{},{},{},{},{},{},{}]
+function App() {
+  return (
+    <UserStatus isLogin={false}/>
+  );
+}
+
+/* let list = [{},{},{},{},{},{},{},{}]
 
 function App() {
   return (
     <MailBox unReadMessage ={list}/>
   );
-}
+} */
 
 /* function App() {
   return (

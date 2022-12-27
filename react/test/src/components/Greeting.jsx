@@ -16,12 +16,16 @@ function GuestGreeting(props){
 function Greeting(props){
 
     const isLogin = props.isLogin
-
-    if(isLogin){
+/*     if(isLogin){
         return <UserGreeting/>
     }
+    return <GuestGreeting/> */
 
-    return <GuestGreeting/>
-
+    // 인라인조건 if-else문
+    return(
+        <>
+        {isLogin ? <UserGreeting/> : <GuestGreeting/>}
+        </>
+    )
 }
 export default Greeting;
