@@ -4,13 +4,20 @@ import Comment from './components/Comment';
 import Notification from './components/Notification';
 import Counter from './components/Counter';
 import TextInputButton from './components/TextInputButton';
+import Accommodate from './components/Acommodate';
 
 
 function App() {
   return (
-    <TextInputButton/>
+    <Accommodate/>
   );
 }
+
+/* function App() {
+  return (
+    <TextInputButton/>
+  );
+} */
 
 /* function App() {
   return (
