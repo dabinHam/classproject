@@ -1,7 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import Comment from './components/Comment';
+
+const comment = {
+  user : {
+    userName : '손',
+    imgUrl : 'https://ichef.bbci.co.uk/news/640/cpsprodpb/4118/production/_119546661_gettyimages-1294130887.jpg'
+  },
+  content : '대한민국 화이팅!',
+  replyDate : '2022-12-26'
+}
 
 function App() {
+  return (
+    <Comment user={comment.user} content={comment.content} replyDate={comment.replyDate}/>
+  );
+}
+
+/* function App() {
   return (
     <div className="App">
       <header className="App-header">
@@ -21,5 +37,6 @@ function App() {
     </div>
   );
 }
+ */
 
 export default App;
