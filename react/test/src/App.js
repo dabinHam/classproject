@@ -10,13 +10,28 @@ import MyButton from './components/MyButton';
 import ConfirmButton from './components/ConfirmButton';
 import Greeting from './components/Greeting';
 import LoginControl from './LoginControl';
+import MailBox from './components/MailBox';
 
+
+/* function App() {
+  return (
+    <MailBox/>
+  );
+} */
+
+let list = [{},{},{},{},{},{},{},{}]
 
 function App() {
   return (
-    <LoginControl/>
+    <MailBox unReadMessage ={list}/>
   );
 }
+
+/* function App() {
+  return (
+    <LoginControl/>
+  );
+} */
 
 
 /* // 상위컴포넌트에서 하위컴포넌트로 상태,데이터 공유
