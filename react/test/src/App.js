@@ -16,22 +16,29 @@ import WarnningBanner from './WarnningBanner';
 import ToolBar from './components/ToolBar';
 import MainPage from './components/MainPage';
 import NumberList from './components/NumberList';
-import TemPlayers from './components./TemPlayers';
-import NameForm from './components./NameForm';
+import TemPlayers from './components/TemPlayers';
+import NameForm from './components/NameForm';
 import RequestForm from './components/RequestForm';
 import FruitSelect from './components/FruitSelect';
+import Reservation from './components/Reservation';
+import Signup from './components/Signup';
 
+function App() {
+  return (
+    <Signup/>
+  );
+}
+
+/* function App() {
+  return (
+    <Reservation/>
+  );
+} */
 
 
 /* function App() {
   return (
     <FruitSelect/>
-  );
-} */
-
-/* function App() {
-  return (
-    <RequestForm/>
   );
 } */
 

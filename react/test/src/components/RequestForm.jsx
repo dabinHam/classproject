@@ -15,7 +15,7 @@ function RequestForm(props){
     }
 
     return(
-        <form onChange={handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <label>
                 요청사항 :
                 <textarea value={value} onChange={handleChange}></textarea>
