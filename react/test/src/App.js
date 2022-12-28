@@ -16,18 +16,19 @@ import WarnningBanner from './WarnningBanner';
 import ToolBar from './components/ToolBar';
 import MainPage from './MainPage';
 import NumberList from './components/NumberList';
-
-/* function App() {
-  return (
-    <MailBox/>
-  );
-} */
+import TemPlayers from './TemPlayers';
 
 function App() {
   return (
-    <NumberList/>
+    <TemPlayers/>
   );
 }
+
+/* function App() {
+  return (
+    <NumberList/>
+  );
+} */
 
 /* function App() {
   return (
