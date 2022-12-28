@@ -9,23 +9,45 @@ import Toggle from './components/Toggle';
 import MyButton from './components/MyButton';
 import ConfirmButton from './components/ConfirmButton';
 import Greeting from './components/Greeting';
-import LoginControl from './LoginControl';
+import LoginControl from './components/LoginControl';
 import MailBox from './components/MailBox';
 import UserStatus from './components/UserStatus';
 import WarnningBanner from './WarnningBanner';
 import ToolBar from './components/ToolBar';
-import MainPage from './MainPage';
+import MainPage from './components/MainPage';
 import NumberList from './components/NumberList';
-import TemPlayers from './TemPlayers';
-import NameForm from './NameForm';
+import TemPlayers from './components./TemPlayers';
+import NameForm from './components./NameForm';
+import RequestForm from './components/RequestForm';
+import FruitSelect from './components/FruitSelect';
 
 
 
-function App() {
+/* function App() {
+  return (
+    <FruitSelect/>
+  );
+} */
+
+/* function App() {
+  return (
+    <RequestForm/>
+  );
+} */
+
+
+/* function App() {
+  return (
+    <RequestForm/>
+  );
+} */
+
+
+/* function App() {
   return (
     <NameForm/>
   );
-}
+} */
 
 
 /* function App() {

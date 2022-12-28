@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import ToolBar from "./components/ToolBar";
+import ToolBar from "./ToolBar";
 
 function MainPage(props){
 
