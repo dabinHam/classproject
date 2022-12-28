@@ -28,28 +28,39 @@ import WelcomeDialog from './components/WelcomeDialog';
 import SignUpDiaolog from './components/SignUpDiaolog';
 import Card from './components/Card';
 import ProfileCard from './components/ProfileCard';
+import DarkOrWhite from './components/DarkOrWhite';
 
 function App() {
   return (
-    <ProfileCard/>
+    <DarkOrWhite/>
   );
 }
+
+/* function App() {
+  return (
+    <ProfileCard/>
+  );
+} */
+
 /* function App() {
   return (
     <SignUpDiaolog/>
   );
 } */
+
 /* function App() {
   return (
     <WelcomeDialog/>
   );
 } */
+
 /* function App() {
   return (
     <WelcomeMessage/>
   );
 }
  */
+
 /* function App() {
   return (
     <Signup/>
