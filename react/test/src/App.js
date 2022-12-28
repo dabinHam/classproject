@@ -15,6 +15,7 @@ import UserStatus from './components/UserStatus';
 import WarnningBanner from './WarnningBanner';
 import ToolBar from './components/ToolBar';
 import MainPage from './MainPage';
+import NumberList from './components/NumberList';
 
 /* function App() {
   return (
@@ -24,9 +25,15 @@ import MainPage from './MainPage';
 
 function App() {
   return (
-    <MainPage/>
+    <NumberList/>
   );
 }
+
+/* function App() {
+  return (
+    <MainPage/>
+  );
+} */
 
 /* function App() {
   return (
