@@ -12,7 +12,7 @@ import Greeting from './components/Greeting';
 import LoginControl from './components/LoginControl';
 import MailBox from './components/MailBox';
 import UserStatus from './components/UserStatus';
-import WarnningBanner from './WarnningBanner';
+import WarnningBanner from './components/WarnningBanner';
 import ToolBar from './components/ToolBar';
 import MainPage from './components/MainPage';
 import NumberList from './components/NumberList';
@@ -22,12 +22,32 @@ import RequestForm from './components/RequestForm';
 import FruitSelect from './components/FruitSelect';
 import Reservation from './components/Reservation';
 import Signup from './components/Signup';
+import FancyBorder from './components/FancyBorder';
+import WelcomeMessage from './components/WelcomeMessage';
+import WelcomeDialog from './components/WelcomeDialog';
+import SignUpDiaolog from './components/SignUpDiaolog';
 
 function App() {
   return (
-    <Signup/>
+    <SignUpDiaolog/>
   );
 }
+/* function App() {
+  return (
+    <WelcomeDialog/>
+  );
+} */
+/* function App() {
+  return (
+    <WelcomeMessage/>
+  );
+}
+ */
+/* function App() {
+  return (
+    <Signup/>
+  );
+} */
 
 /* function App() {
   return (
