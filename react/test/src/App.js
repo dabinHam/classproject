@@ -17,12 +17,28 @@ import ToolBar from './components/ToolBar';
 import MainPage from './MainPage';
 import NumberList from './components/NumberList';
 import TemPlayers from './TemPlayers';
+import NameForm from './NameForm';
+
+
 
 function App() {
   return (
-    <TemPlayers/>
+    <NameForm/>
   );
 }
+
+
+/* function App() {
+  return (
+    <TemPlayers/>
+  );
+} */
+
+/* function App() {
+  return (
+    <TemPlayers/>
+  );
+} */
 
 /* function App() {
   return (
