@@ -26,12 +26,19 @@ import FancyBorder from './components/FancyBorder';
 import WelcomeMessage from './components/WelcomeMessage';
 import WelcomeDialog from './components/WelcomeDialog';
 import SignUpDiaolog from './components/SignUpDiaolog';
+import Card from './components/Card';
+import ProfileCard from './components/ProfileCard';
 
 function App() {
   return (
-    <SignUpDiaolog/>
+    <ProfileCard/>
   );
 }
+/* function App() {
+  return (
+    <SignUpDiaolog/>
+  );
+} */
 /* function App() {
   return (
     <WelcomeDialog/>
