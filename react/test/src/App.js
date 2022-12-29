@@ -30,11 +30,11 @@ import Card from './components/Card';
 import ProfileCard from './components/ProfileCard';
 import DarkOrWhite from './components/DarkOrWhite';
 
-function App() {
+/* function App() {
   return (
     <DarkOrWhite/>
   );
-}
+} */
 
 /* function App() {
   return (
@@ -42,11 +42,11 @@ function App() {
   );
 } */
 
-/* function App() {
+function App() {
   return (
     <SignUpDiaolog/>
   );
-} */
+}
 
 /* function App() {
   return (

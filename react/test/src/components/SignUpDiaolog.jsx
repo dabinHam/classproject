@@ -6,7 +6,7 @@ let room = [];
 
 function SignUpDiaolog(props){
 
-    const [nickName,setNickName] = useState('빨강색');
+    const [nickName,setNickName] = useState('');
 
     const handleClick = (event) =>{
         alert(`어서오세요~!! ${nickName}님`);
