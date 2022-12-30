@@ -29,6 +29,14 @@ import SignUpDiaolog from './components/SignUpDiaolog';
 import Card from './components/Card';
 import ProfileCard from './components/ProfileCard';
 import DarkOrWhite from './components/DarkOrWhite';
+import WordContainer from './components/ex2/WordContainer';
+
+function App() {
+  return (
+    <WordContainer/>
+  );
+}
+
 
 /* function App() {
   return (
@@ -42,11 +50,11 @@ import DarkOrWhite from './components/DarkOrWhite';
   );
 } */
 
-function App() {
+/* function App() {
   return (
     <SignUpDiaolog/>
   );
-}
+} */
 
 /* function App() {
   return (
