@@ -9,12 +9,9 @@
       <change beforePath="$PROJECT_DIR$/../../javaproject/OOPMiniProjects/src/ver01/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../javaproject/OOPMiniProjects/src/ver01/Contact.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../javaproject/OOPMiniProjects/src/ver01/ContactMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../javaproject/OOPMiniProjects/src/ver01/ContactMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../javaproject/OOPMiniProjects/src/ver02/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../javaproject/OOPMiniProjects/src/ver02/Contact.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list/CommentList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list/CommentList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list/CommentListItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list/CommentListItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/list/PostList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/list/PostList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/page/PageLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/page/PageLayout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/page/PostViewPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/page/PostViewPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../test/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/src/components/ex1/Container.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../test/src/components/ex1/Container.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../test/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../spring/intelliJ/MemberManager/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/intelliJ/MemberManager/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../spring/intelliJ/MemberManager/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/intelliJ/MemberManager/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../spring/intelliJ/MemberManager/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/intelliJ/MemberManager/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
@@ -108,7 +105,7 @@
       <option name="presentableId" value="Default" />
       <updated>1672361584194</updated>
       <workItem from="1672361585508" duration="1661000" />
-      <workItem from="1672363253027" duration="19734000" />
+      <workItem from="1672363253027" duration="20530000" />
     </task>
     <servers />
   </component>

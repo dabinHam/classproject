@@ -30,10 +30,11 @@ import Card from './components/Card';
 import ProfileCard from './components/ProfileCard';
 import DarkOrWhite from './components/DarkOrWhite';
 import WordContainer from './components/ex2/WordContainer';
+import Container from './components/ex1/Container';
 
 function App() {
   return (
-    <WordContainer/>
+    <Container/>
   );
 }
 
