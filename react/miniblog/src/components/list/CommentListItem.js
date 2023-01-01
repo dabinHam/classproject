@@ -8,10 +8,11 @@ const Wrapper = styled.div`
         display:flex;
         flex-direction: column;
         align-items: flex-start;
-        border: 1px solid gray
+        border: 1px solid gray;
         border-radius: 8px;
         cursor:pointer;
         background: white;
+        margin-bottom:10px;
         :hover {background: lightgray;};
 `;
 
