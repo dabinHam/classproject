@@ -4,25 +4,33 @@ import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import IconButton from "@mui/material/IconButton";
-
-const menuArr=[
-    {icon:<Dashboard/>,text:"Todo 리스트"},
-    {icon:<Dashboard/>,text:"Todo 등록"},
-    {icon:<Dashboard/>,text:"로그인"},
-    {icon:<Dashboard/>,text:"회원가입"}
-]
+import {useNavigate} from "react-router-dom";
 
 function MenuComponent(props) {
 
+    const menuArr = [
+        {icon:<Dashboard/>, text:"Home", path:"/"},
+        {icon:<Dashboard/>, text:"About", path:"/about"},
+        {icon:<Dashboard/>, text:"Todo", path: "/todo"},
+        {icon:<Dashboard/>, text:"회원가입"},
+    ]
+
+    const navigate = useNavigate();
+    const movePage = (path) => {
+        console.log("move Page...", path)
+        if(path){
+            navigate(path)
+        }
+    }
+
     return (
         <List>
-            {menuArr.map((menu,index)=>{
-                return(
-                    <IconButton key={index}>
+            {menuArr.map((menu, index)=>{
+                return (
+                    <ListItemButton key={index}>
                         <ListItemIcon>{menu.icon}</ListItemIcon>
-                        <ListItemText primary={menu.text}></ListItemText>
-                    </IconButton>
+                        <ListItemText primary={menu.text} onClick={()=>movePage(menu.path)}></ListItemText>
+                    </ListItemButton>
                 )
             })}
         </List>
