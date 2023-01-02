@@ -5,23 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2d1972d-4043-4705-941a-67715a5683af" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../todo/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../todo/src/pages/AboutPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../todo/src/pages/MainPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../todo/src/pages/todo/TodoListPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../todo/src/pages/todo/TodoReadPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../todo/src/pages/todo/TodoRegisterPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../todo/src/routers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../todo/todo.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../todo/src/components/apis/todoAPI.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../todo/src/components/todo/TodoRegisterComponents.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../html/html5/css1.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../html/html5/css1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../javaproject/OOPMiniProjects/src/ver01/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../javaproject/OOPMiniProjects/src/ver01/Contact.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../javaproject/OOPMiniProjects/src/ver01/ContactMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../javaproject/OOPMiniProjects/src/ver01/ContactMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../javaproject/OOPMiniProjects/src/ver02/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../javaproject/OOPMiniProjects/src/ver02/Contact.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../todo/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../todo/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../todo/src/components/menu/MenuComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/../todo/src/components/menu/MenuComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../todo/src/layout/Pagelayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/../todo/src/layout/PageLayout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../todo/src/pages/SamplePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../todo/src/pages/SamplePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../todo/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../todo/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../todo/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../todo/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../todo/src/pages/todo/TodoRegisterPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../todo/src/pages/todo/TodoRegisterPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../spring/intelliJ/MemberManager/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/intelliJ/MemberManager/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../spring/intelliJ/MemberManager/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/intelliJ/MemberManager/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../spring/intelliJ/MemberManager/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/intelliJ/MemberManager/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
@@ -115,7 +108,7 @@
       <option name="presentableId" value="Default" />
       <updated>1672361584194</updated>
       <workItem from="1672361585508" duration="1661000" />
-      <workItem from="1672363253027" duration="21165000" />
+      <workItem from="1672363253027" duration="21166000" />
     </task>
     <servers />
   </component>

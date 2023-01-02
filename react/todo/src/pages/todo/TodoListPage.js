@@ -22,6 +22,14 @@ function TodoListPage(props) {
         navigate("/todo/register")
     }
 
+    const moveToRead = (id) => {
+        const pageNum = page;
+        const sizeNum = size;
+        navigate({pathname:`/todo/read/${id}`, search:`?page=${pageNum}&size=${sizeNum}`})
+    }
+
+    const query = {page, size}
+
     return (
         <PageLayout title={'Todo List Page'}>
             <Grid item xs={12} md={12} lg={12}>
