@@ -12,7 +12,8 @@ const routers = createBrowserRouter([
             {path:"list", element:<TodoListPage></TodoListPage>},
             {path:"register", element:<TodoRegisterPage></TodoRegisterPage>},
             {path:"", element:<Navigate to={"/todo/list"}></Navigate>},
-            /*{path:"read/:id", element:<TodoReadPage></TodoReadPage>}*/
+            {path:":cmd/:id", element:<TodoReadPage></TodoReadPage>}
+            // {path:"read/:id", element:<TodoReadPage></TodoReadPage>}
         ]}
 ])
 
