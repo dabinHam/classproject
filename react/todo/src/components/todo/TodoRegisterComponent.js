@@ -5,7 +5,7 @@ import Box from "@mui/material/Box";
 import {postTodo} from "../apis/todoAPI";
 
 
-function TodoRegisterComponents({setResult}) {
+function TodoRegisterComponent({setResult}) {
 
     const [todo, setTodo] = useState({title:'', writer:'', complete:false});
 
@@ -39,4 +39,4 @@ function TodoRegisterComponents({setResult}) {
     );
 }
 
-export default TodoRegisterComponents;
+export default TodoRegisterComponent;

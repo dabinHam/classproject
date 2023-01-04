@@ -4,7 +4,7 @@ import Ex1 from "../../components/ex/Ex1";
 import {Dialog, DialogTitle, Grid, Paper} from "@mui/material";
 import {useNavigate, useParams} from "react-router-dom";
 import Typography from "@mui/material/Typography";
-import TodoRegisterComponents from "../../components/todo/TodoRegisterComponents";
+import TodoRegisterComponent from "../../components/todo/TodoRegisterComponent";
 
 function TodoRegisterPage(props) {
 
@@ -24,7 +24,7 @@ function TodoRegisterPage(props) {
         <PageLayout title={'Todo Register Page'}>
             <Grid item xs={12} md={12} lg={12}>
                 <Paper sx={{p:2, display:'flex', flexDirection:'column'}}>
-                    <TodoRegisterComponents setResult={setResult}></TodoRegisterComponents>
+                    <TodoRegisterComponent setResult={setResult}></TodoRegisterComponent>
                     <Ex1></Ex1>
                 </Paper>
             </Grid>
