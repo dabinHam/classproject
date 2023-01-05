@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import {Button, Checkbox, FormControlLabel, Stack, TextField} from "@mui/material";
 
-function TodoReadComponent({id, moveToList, setResult}) {
+function TodoReadComponent({id, moveToList, setResult, moveToModify}) {
 
     const navigate = useNavigate();
     const [todo, setTodo] = useState({});
@@ -41,11 +41,11 @@ function TodoReadComponent({id, moveToList, setResult}) {
             <Box sx={{p:1}}>
                 <FormControlLabel control={<Checkbox checked={todo.complete}/>} label='Complete'/>
             </Box>
-            <Box sx={{p:1}} display={"flex"} justifyContent={"right"}>
-                <Stack spacing={2} direction={"row"}>
-                    <Button variant={"contained"} onClick={()=> moveToModify()}>수정</Button>
+            <Box sx={{p:1}} display={"flex"} justifyContent={"right"} >
+                <Stack spacing={2} direction="row">
+                    <Button variant={"contained"} onClick={() => moveToModify()}>수정</Button>
                     <Button variant={"contained"} onClick={clickDelete}>삭제</Button>
-                    <Button variant={"contained"} onClick={moveToList}>List</Button>
+                    <Button variant={"contained"} onClick={moveToList}>LIST</Button>
                 </Stack>
             </Box>
         </>
