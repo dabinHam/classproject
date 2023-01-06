@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import {getTodo} from "../../apis/todoAPI";
+
 import {useNavigate} from "react-router-dom";
-import {deleteTodo} from "../apis/todoAPI";
+import {getTodo,deleteTodo} from "../apis/todoAPI";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import {Button, Checkbox, FormControlLabel, Stack, TextField} from "@mui/material";
