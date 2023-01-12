@@ -37,7 +37,7 @@ public class Board {
     @Column
     private String photo;
 
-    @Column(insertable = false, updatable = false)
+    @Column(insertaㅋble = false, updatable = false)
     private LocalDate regdate;
 
     @Column(insertable = false)
