@@ -18,6 +18,7 @@
     <tr>
         <td>번호</td>
         <td>할일</td>
+
         <td>기간</td>
         <td>완료여부</td>
     </tr>
@@ -30,9 +31,6 @@
             <td>${todo.finished ? '완료' : '진행중'}</td>
         </tr>
     </c:forEach>
-
-
-
 </table>
 
 

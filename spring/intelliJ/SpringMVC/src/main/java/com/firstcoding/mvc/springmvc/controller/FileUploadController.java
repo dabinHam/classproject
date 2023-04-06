@@ -31,7 +31,7 @@ public class FileUploadController {
     // 2. MultipartHttpServletRequest
     // 3. 커맨드 객체
 
-    // 1. @RequestParam
+     /* == 1. @RequestParam == */
     @PostMapping("/submit1")
     public String result1(
             @RequestParam("snum") String snum,

@@ -87,7 +87,6 @@ insert into emp02 values (1114, 'HOT', null, null, null, null, null); -- 명시�
 insert into emp02 values (1114, 'HOT', '', '', '', '', ''); -- null 을 입력하는 또 다른방법 많이 쓰이진 않는다. 
 
 
-
 -- ---------------------------------
 -- 데이터의 수정
 -- update 테이블이름 set 컬럼이름 = 새로운값, 컬러이름=새로운값 where 행 선택 조건
@@ -129,7 +128,7 @@ select *from dept01;
 -- 1. 부서 번호가 20번인 부서의 이름과 지역은 RESEARCH와 DALLAS입니다. 
 -- 다음은 부서번호가 20인 부서의 부서명과 지역명을 부서 번호가 40번인 부서와 동일하게 변경
 update dept01
-set (dname, loc) = (select dname, loc from dept where deptno=40)
+set(dname, loc) = (select dname, loc from dept where deptno=40)
 where deptno = 20
 ;
 select * from dept01;

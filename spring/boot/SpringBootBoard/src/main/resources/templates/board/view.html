@@ -181,6 +181,7 @@
         setList()
     })
 
+    // 댓글 가져오기
     function setList(){
         // 비동기통신 : 댓글 리스트 가져오기  경로는 변수처리
         axios.get('/reply/'+bno)
@@ -214,6 +215,7 @@
 
     }
 
+    댓글 입력
     function insertReply(){
         // 서버로 전송 할 payload(parameter,data)
         const payload = {
@@ -253,6 +255,7 @@
             .catch(err => console.log(err))
     }
 
+    게시글 삭제
     function deleteReply(rno){
 
         if(!confirm('삭제하시겠습니까?')){
@@ -278,6 +281,7 @@
             .catch(err=>console.log(err))
     }
 
+    // 수정 모달
     function showEditModal(rno){
         editModal.show()
 
@@ -297,6 +301,7 @@
         document.querySelector('#ereplydate').value=editTD[2].textContent
     }
 
+    // 댓글 수정
     function editReply(){
         // post와 같음
         // 서버로 전송 할 payload(parameter,data)

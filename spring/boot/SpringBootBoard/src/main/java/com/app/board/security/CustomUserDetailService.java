@@ -1,3 +1,4 @@
+/*
 package com.app.board.security;
 
 import com.app.board.entity.BoardMember;
@@ -50,4 +51,4 @@ public class CustomUserDetailService implements UserDetailsService {
         return user;
     }
 
-}
+}*/

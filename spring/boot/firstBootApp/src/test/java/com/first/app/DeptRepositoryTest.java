@@ -65,6 +65,7 @@ public class DeptRepositoryTest {
 
         log.info("::::::::::::::::::::::: ::::::::::::::::::::::: :::::::::::::::::::::::");
 
+        // 검색 , ~~중에 찾는것
          /*select
                 dept0_.deptno as deptno1_0_,
                 dept0_.dname as dname2_0_,

@@ -11,22 +11,22 @@ import java.util.List;
 @Mapper
 public interface TodoMapper {
 
-    // Todo 전체 리스트 출력
-    @Select("select *from tbl_todo")
-    public List<TodoDTO> selectAll();
+    // Todo 전체 리스트
+    @Select("select * from tbl_todo where writer = #{idx}")
+    List<TodoDTO> selectAll(int idx);
 
     // tno 값으로 하나의 Todo 정보를 가져오는 메소드
-    @Select("select *from tbl_todo where tno=#{no}")
+    @Select("select * from tbl_todo where tno=#{tno}")
     public TodoDTO selectByTno(long tno);
 
-    // todo 정보 입력
+    // Todo 정보 입력
     int insertToDo(TodoDTO dto);
 
-    // todo 정보 수정
+    // Todo 정보 수정
     int updateTodo(TodoDTO dto);
 
-    @Delete("delete from tbl_todo where tno=#{no}")
-    // todo 정보 삭제
+    // Todo 정보 삭제
+    @Delete("delete from tbl_todo where tno=#{tno}")
     int deleteTodo(long dto);
 
 }

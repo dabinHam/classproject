@@ -15,6 +15,8 @@ public interface BoardRepository extends JpaRepository<Board, Integer> {
     // 입력  :  save()
     // 삭제  : 별도 메소드 생성 => int, @Transactional 반드시 추가
 
+
+
     @Transactional
     @Modifying  // insert, update, delete
     /*@Query("delete from Board b where b.bno = ?1")*/

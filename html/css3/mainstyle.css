@@ -1,0 +1,110 @@
+@charset "utf-8";
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Poor+Story&display=swap');
+
+/* 
+font-family: 'Nanum Myeongjo', serif;
+font-family: 'Playfair Display', serif;
+font-family: 'Poor Story', cursive;
+*/
+
+.clearfix::after{ display: block; content: ''; clear: both; }
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+*{ 
+    margin: 0; padding: 0;
+    color: #333;
+}
+body{font-family: 'Nanum Myeongjo', serif; }
+.wrap{
+    width: 90%;
+    margin: 0 auto;
+}
+/* header */
+header{ padding: 50px 0; border-bottom: 1px solid #333;}
+h1{ 
+    text-align: center; 
+    font-size: 50px;
+    font-weight: 300;
+    
+}
+h2{
+    font-size: 30px;
+    font-weight: 200;
+    margin-bottom: 1em;
+}
+
+/* nav */
+nav{
+    box-sizing: border-box;
+}
+nav ul{
+
+    height: 60px;
+
+    }
+nav ul li{
+    float: left; 
+    margin-right: 20px;
+    font-size: 20px;
+    line-height: 60px;
+}
+nav ul li a{
+
+}
+
+/* main */
+main{
+    border-top: 1px solid #333;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+main .m_wrap{display: flex;}
+main .contact{width: 70%; background-color: lavenderblush; height: 800px; padding: 10px; box-sizing: border-box;}
+main .contact .m_html{}
+main .contact .m_html p{}
+
+main .aside{
+    width: 30%; height: 800px; 
+    background-color: lavender;
+    box-sizing: border-box; padding: 10px;
+    display: flex; flex-direction: column; justify-content: space-between;
+}
+main .aside .m_css{
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+    position: relative;
+}
+main .aside .m_css .ip_box{
+    height: 60%; 
+    width: 70%;
+
+    display: flex; flex-direction: column;
+    justify-content: space-around;}
+main .aside .m_css .ip_box label{display: flex; justify-content: flex-end;}
+main .aside .m_css .ip_box label input{ }
+.login_btn{
+    display: inline-block;
+    background: lemonchiffon; padding: 10px;
+    border-radius: 5%;
+    font-size: 11px;
+    position: absolute;
+    right: 2em; bottom: 0;
+}
+
+main .aside .m_javascript{height: 400px; background: lightcyan;}
+main .aside .m_javascript p{}
+
+
+footer{
+    border-top: 1px solid #eee;
+    height: 300px;
+    background: steelblue;
+}

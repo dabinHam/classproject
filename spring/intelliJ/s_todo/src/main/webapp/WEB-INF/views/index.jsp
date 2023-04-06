@@ -12,23 +12,36 @@
     <title>Todo Project</title>
 </head>
 <style>
+    *{ margin: 0; padding: 0;}
     ul,li{list-style: none;}
     a{text-decoration: none;}
-    .wrap{ margin: 0; padding: 0; width: 80%;}
-    .go_list_btn{display: block; }
+    .wrap{margin: 0 auto; width: 80%;}
+    .clearfix::after{ display: block; content: ''; clear: both;}
+    .go_list_btn{display: block; margin: 50px 0;}
+    .txt_main{margin-top: 100px;}
+    .txt_main h1{margin-bottom: 20px;}
+    .txt_main div{float: left;}
+
+    .not_login li{float: left;}
+    .not_login li a{display: inline-block; padding: 2px; border: 1px solid #333;}
 </style>
 <body>
 <div class="wrap">
-    <h1>Todo Project</h1>
-    <div class="txt_main">
-        <span>spring을 활용하여 만드는 todo 리스트 입니다.</span>
-        <p>프로젝트 기능 : </p>
-        <span>회원가입, 로그인, 로그아웃</span>
-        <br>
-        <span>할일목록 확인,추가,삭제 </span>
-        <a href="todo/list" class="go_list_btn">Todo List 바로가기</a>
+
+    <div class="txt_main clearfix">
+        <div>
+            <h1>Todo Project</h1>
+            <span>spring을 활용하여 만드는 todo 리스트 입니다.</span>
+            <p>프로젝트 기능 : </p>
+            <span>회원가입, 로그인, 로그아웃</span>
+            <br>
+            <span>할일목록 확인,추가,삭제 </span>
+        </div>
+        <div>
+            <a href="todo/list" class="go_list_btn">Todo List 바로가기</a>
+        </div>
     </div>
-    <section><%--비로그인상태 영역--%>
+    <section class="not_login"><%--비로그인상태 영역--%>
         <c:if test="${loginInfo eq null}">
             <span>비로그인 상태입니다. 로그인 해주세요.</span>
             <ul>

@@ -19,9 +19,6 @@ public class Contact {
 	
 	
 
-	public Contact() {
-
-	}
 
 	// 인스턴스 생성과 함께 데이터를 초기화 할 수 있도록 생성자를 정의해봅시다
 	public Contact(String name, String phoneNumber, String email, String address, String birthday, String group) {

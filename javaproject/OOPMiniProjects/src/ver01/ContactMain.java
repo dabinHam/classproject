@@ -8,22 +8,22 @@ public class ContactMain {
 
 		Scanner in = new Scanner(System.in);
 
-		// contact 인스턴스 생성 : 생성자를 이용한 데이터 초기화
-		Contact c1 = new Contact("손흥민", "010-9999-8888", "son@gmail.com", "런던", "1999-10-12", "가");
-
-		System.out.println("이름 : " + c1.getName());
-		System.out.println("전화번호 : " + c1.getPhoneNumber());
-		System.out.println("이메일 : " + c1.getEmail());
-		System.out.println("주소 : " + c1.getAddress());
-		System.out.println("생일 : " + c1.getBirthday());
-		System.out.println("그룹 : " + c1.getGroup());
-
-		System.out.println();
-		c1.printInfo();
-
-		// 인스턴스의 각 변수에 값을 바꾸는 메소드를 이용해서 데이터를 수정합니다.
-		c1.setName("박지성");
-		c1.setPhoneNumber("010-1234-5678");
+//		// contact 인스턴스 생성 : 생성자를 이용한 데이터 초기화
+//		Contact c1 = new Contact("손흥민", "010-9999-8888", "son@gmail.com", "런던", "1999-10-12", "가");
+//
+//		System.out.println("이름 : " + c1.getName());
+//		System.out.println("전화번호 : " + c1.getPhoneNumber());
+//		System.out.println("이메일 : " + c1.getEmail());
+//		System.out.println("주소 : " + c1.getAddress());
+//		System.out.println("생일 : " + c1.getBirthday());
+//		System.out.println("그룹 : " + c1.getGroup());
+//
+//		System.out.println();
+//		c1.printInfo();
+//
+//		// 인스턴스의 각 변수에 값을 바꾸는 메소드를 이용해서 데이터를 수정합니다.
+//		c1.setName("박지성");
+//		c1.setPhoneNumber("010-1234-5678");
 
 		///////////////////////////
 		while (true) {

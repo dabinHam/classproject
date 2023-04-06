@@ -9,20 +9,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@Log4j2
 @Controller
 public class TodoReadController {
 
-    @Autowired(required = false)
+    @Autowired
     private TodoService todoService;
 
     @GetMapping("/todo/read")
     public void readTodo(Model model, @RequestParam("tno") int tno){
 
+        model.addAttribute("todo", todoService.ge`tTodo(tno));
 
-        model.addAttribute("todo",todoService.getTodo(tno));
+        //return "todo/read";
 
-//        return "todo/read";
     }
 
 }

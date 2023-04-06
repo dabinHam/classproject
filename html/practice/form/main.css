@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+
+.wrap{
+    margin: 0 auto;
+    width: 90%;
+}
+
+/* header */
+header{}
+header h1.title_font{}
+
+
+/* 회원 등록 */
+.regFormArea{te}
+.regFormArea h2.title_font{}
+.regFormArea h2.regForm{}
+.regFormArea h2.regForm table{}
+.regFormArea h2.regForm tr{}
+.regFormArea h2.regForm tr td{}
+.regFormArea h2.regForm tr td label{}
+.regFormArea h2.regForm tr td label input{}
+.regFormArea h2.regForm tr td label input .msg{}
+
+
+.regFormArea h2.regForm tr td input[type=submit]{}
+
+
+/* 회원 리스트 */
+
+.listArea{}
+.listArea h2.title_font{}
+.listArea h2.title_font table{    border: 1px solid #000;}
+.listArea h2.title_font table tbody#list{
+
+}
+.listArea h2.title_font table tbody#list tr{}
+.listArea h2.title_font table tbody#list tr th{}
+
+/*  수정  */
+#editFormArea {display: none;}
+#editFormArea table {}
+#editFormArea table tr {}
+#editFormArea table tr td {}
+#editFormArea table tr td input {}

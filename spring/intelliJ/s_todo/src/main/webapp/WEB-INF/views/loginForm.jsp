@@ -24,7 +24,9 @@
       <td><input type="password" name="upw"> </td>
     </tr>
     <tr>
-      <td></td>
+      <td>
+        <lable>자동로그인<input type="checkbox" value="자동로그인"></lable>
+      </td>
       <td><input type="submit" value="로그인"></td>
     </tr>
     <tr>

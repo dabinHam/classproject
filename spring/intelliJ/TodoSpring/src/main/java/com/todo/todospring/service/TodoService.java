@@ -9,31 +9,23 @@ import lombok.Cleanup;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import java.sql.Connection;
 import java.util.Collections;
 import java.util.List;
-
 @Log4j2
-@Repository
+@Service
 public class TodoService {
-
-//    private final TodoDao dao;
-//    static private TodoService instance = new TodoService(new TodoDaoImpl());
-//    private TodoService(TodoDao dao) {
-//        this.dao = dao;
-//    }
-//    public static TodoService getInstance() {
-//        return instance;
-//    }
 
     @Autowired(required = false)
     private TodoMapper todoMapper;
-    public List<TodoDTO> getTodoList() {
+
+
+    public List<TodoDTO> getTodoList(int idx) {
         List<TodoDTO> list = null;
         try {
-//            @Cleanup Connection conn = ConnectionProvider.getInstance().getConnection();
-            list = todoMapper.selectAll();
+            list = todoMapper.selectAll(idx);
             log.info(list);
         } catch (Exception e) {
             e.printStackTrace();
@@ -43,11 +35,9 @@ public class TodoService {
         return list;
     }
 
-
     public TodoDTO getTodo(long tno) {
         TodoDTO todoDTO = null;
         try {
-//            @Cleanup Connection conn = ConnectionProvider.getInstance().getConnection();
             todoDTO = todoMapper.selectByTno(tno);
             log.info(todoDTO);
         } catch (Exception e) {
@@ -58,14 +48,11 @@ public class TodoService {
         return todoDTO;
     }
 
-    // 할일 추가
     public int insertTodo(TodoDTO todoDTO) {
         int result = 0;
 
         try {
-//            @Cleanup Connection conn = ConnectionProvider.getInstance().getConnection();
             result = todoMapper.insertToDo(todoDTO);
-
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -73,14 +60,11 @@ public class TodoService {
         return result;
     }
 
-    // 할일 수정
     public int modify(TodoDTO todoDTO) {
         int result = 0;
 
         try {
-//            @Cleanup Connection conn = ConnectionProvider.getInstance().getConnection();
             result = todoMapper.updateTodo(todoDTO);
-
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -88,11 +72,9 @@ public class TodoService {
         return result;
     }
 
-    // 할일 삭제
     public int deleteBytno(long tno) {
         int result = 0;
         try {
-//            @Cleanup Connection conn = ConnectionProvider.getInstance().getConnection();
             result = todoMapper.deleteTodo(tno);
         } catch (Exception e) {
             e.printStackTrace();

@@ -41,10 +41,210 @@
             #content{
                 color: turquoise;
             }
+
+            /* 속성 선택자 */
+            input[type]{
+                padding: 10px;
+                font-size: 20px;
+            }
+
+            input[type=text]{
+                background-color: rgb(130, 204, 238);
+            }
+
+            input[type=password]{/* type이 password일때 */
+                background-color: blueviolet;
+            }
+
+            img[src]{
+                margin: 1px;
+                padding: 10px;
+            }
+
+            img[src$=png]{/* img가 png로 끝날때  */
+                border: 5px solid springgreen;
+            }
+
+            /* 범위 지정해서 선택하는 자손/후손 선택자 */
+            /* 자손선택자 */
+            #div1>h1{
+                color: red;
+            }
+            /* 후손선택자 */
+            #div1 h1 { color: blue;}
+
+            #div1 h1,h2{
+                margin: 20px;
+            }
+
+            /* 기준 -> 선택자 */
+            #div2>h1 + h2{/* 특정기준으로 바로아래있는 객체를 찾을때 */
+                color: mediumvioletred;
+            }
+
+            #div2>h1 ~ h2{
+                background-color: #333;
+            }
+
+            /* 반응선택자 */
+            h3{
+                border: 3px solid#000;
+            }
+            h3:hover{/* 올려놨을때 */
+                background-color: aquamarine;
+                color: blue;
+                padding: 20px;
+                font-size: 32px;
+            }
+
+            h3:active{/* 클릭하고있는 상태 */
+                color: red;
+                font-size: 16px;
+            }
+
+
+            /* 상태선택자 */
+            #uname{
+                outline: none;
+                border: transparent;
+            }
+
+            #uname:focus{
+                /* border: transparent; */
+                outline: 0;
+                border: 10px solid deeppink;
+            }
+
+            #uname:disabled{
+                background-color: gray;
+            }
+
+            #menuCheck + div{
+                width: 300px;
+                background-color: darkslategrey;
+                display: none;
+
+                overflow: hidden;
+            }
+            #menuCheck:checked + div{
+                width: 300px;
+                background-color: darkslategrey;
+                display: block;
+            }
+            #menulabel:hover{
+                background-color: aqua;
+                cursor: pointer;
+            }
+
+            #menuList{
+                list-style: none;
+                overflow: hidden;
+            }
+
+            #menuList>li{
+                float: left;
+                padding: 10px 30px;
+            }
+
+            #menuList>li:first-child{
+                border-radius: 30px 0 0 30px;
+            }
+
+            #menuList>li:last-child{
+                border-radius: 0 30px 30px 0;
+            }
+
+            #menuList>li:nth-child(2n+1){
+                background-color: rgb(216, 249, 196);
+            }
+            #menuList>li:nth-child(2n){
+                background-color: rgb(192, 232, 245);
+            }
+
+            p::selection{/* p를 드래그 하여 선택했을때  */
+                background-color: palevioletred;
+                color: aliceblue;
+            }
+            a{
+                color: black;
+                text-decoration: none;
+            }
+            a:hover{
+                color: purple;
+                text-decoration: underline;
+            }
+
+            a:visited{
+                color: palevioletred;
+            }
+
+            a:active{
+                color: red;
+            }
     </style>
 </head>
 <body>
 
+    <ul id="menuList">
+        <li><a href="#">home</a></li>
+        <li><a href="http://www.naver.com">네이버</a></li>
+        <li><a href="http://github.com">github</a></li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+    </ul>
+    <ul id="menuList2">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+    </ul>
+
+    <hr>
+    <label id="menulabel" for="menuCheck">check</label>
+    <input type="checkbox" id="menuCheck">
+    <div>
+        <h4>게임 타이틀</h4>
+        <p>요즘 제일 핫한 게임은 탕탕</p>
+    </div>
+
+    <hr>
+    <input type="text" name="" id="uname">
+    <br>
+    <input type="checkbox" id="chk">
+
+    <h3>action</h3>
+
+    <div id="div2">
+        <h1>Header - 1</h1>
+        <h2>Header - 2</h2>
+        <h2>Header - 2</h2>
+        <h2>Header - 2</h2>
+        <h2>Header - 2</h2>
+    </div>
+
+    <div id="div1">
+        <h1>CSS 선택자 기본</h1>
+        <h2>기본 선택자</h2>
+        <ul>
+            <li>전체 선택자</li>
+            <li>태그 선택자</li>
+            <li>아이디 선택자와 클래스 선택자</li>
+        </ul>
+    </div><!-- //.div1 -->
+    <br>
+    <img src="img1.png" alt="img1" height="40">
+    <img src="img1.png" alt="img1" height="60">
+    <img src="img1.png" alt="img1" height="100">
+    <br>
+    <input type="text">
+    <input type="password">
+    <input type="text">
+    <br>
     <div id="header">header</div>
     <div id="aside">aside</div>
     <div id="content">content</div>

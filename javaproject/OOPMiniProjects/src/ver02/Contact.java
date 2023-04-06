@@ -5,7 +5,6 @@ package ver02;
 public class Contact {
 	/*
 	 * 저장정보 이름 전화번호 이메일 주소 생일 그룹
-	 * 
 	 * *변수들은 직접 참조를 막아 캡슐화 처리를 하도록 해봅시다.
 	 */
 
@@ -80,7 +79,8 @@ public class Contact {
 	}
 
 	/////////////////////////////
-	// 위 데이터를 출력하는 기능
+	// 위 데이터를 출력하는 기능 -> 상속관계가 된다면 오버라이딩 해줘야함
+	
 	public void printInfo() { // printData 도 많이
 		System.out.println("이름 : " + this.name);
 		System.out.println("전화번호 : " + this.phoneNumber);
